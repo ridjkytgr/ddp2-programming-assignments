@@ -6,7 +6,7 @@ public class ExtractNPM {
     /*
     You can add other method do help you solve
     this problem
-    
+
     Some method you probably need like
     - Method to get tahun masuk or else
     - Method to help you do the validation
@@ -26,13 +26,12 @@ public class ExtractNPM {
             // Dilakukan di dalam if agar dipastikan terlebih dahulu npm tersebut ada 14 angka
             if (kodeNpmVal(npmString)) { // Pengecekan kode NPM
                 counter += 1;
-            } if (jurusanVal(npmString.substring(2, 4))) { // Pengecekan kode jurusan
+            } if (jurusanVal(npmString)) { // Pengecekan kode jurusan
                 counter += 1;
             } if (umurVal(npmString)) { // Pengecekan umur
                 counter += 1;
             }
         }
-
         // Melakukan pengecekan validasi dengan menghitung nilai counter
         if (counter == 4) {
             return true;
@@ -51,7 +50,8 @@ public class ExtractNPM {
     }
     // Membuat method untuk mengecek kode jurusan (proses validasi)
     public static boolean jurusanVal(String npmString) {
-        if (npmString.equals("01") || npmString.equals("02") || npmString.equals("03") || npmString.equals("11") || npmString.equals("12"))
+        String kodeJurusan = npmString.substring(2, 4);
+        if (kodeJurusan.equals("01") || kodeJurusan.equals("02") || kodeJurusan.equals("03") || kodeJurusan.equals("11") || kodeJurusan.equals("12"))
             return true;
         else return false;
     }
@@ -59,7 +59,7 @@ public class ExtractNPM {
     // Membuat method untuk menghitung umur dari mahasiswa (proses validasi)
     public static boolean umurVal(String npm) {
         // Mengambil informasi tahun masuk dan tahun lahir dari npm
-        String tahunMasuk = npm.substring(0, 2);
+        String tahunMasuk = "20" + npm.substring(0, 2);
         String tahunLahir = npm.substring(8, 12);
         int tahunMasukInt = Integer.parseInt(tahunMasuk);
         int tahunLahirInt = Integer.parseInt(tahunLahir);
@@ -76,38 +76,34 @@ public class ExtractNPM {
         // Counter untuk menambahkan hasil penjumlahan
         int counter1 = 0;
         int counter2 = 0;
-        if (npm.length() == 14) {
-            // Melakukan pengembilan 13 digit pertama dari NPM
-            String validator = npm.substring(0, 13);
-            int kodeNpm = Integer.parseInt(String.valueOf(npm.charAt(13)));
-            // Melakukan penjumlahan pasangan digit
-            for (int i = 0; i <= 6; i++) {
-                // Mengembil 2 digit yang berpasangan
-                int validator1 = Integer.parseInt(String.valueOf(validator.charAt(i)));
-                int validator2 = Integer.parseInt(String.valueOf(validator.charAt(12 - i)));
+        // Melakukan pengembilan 13 digit pertama dari NPM
+        String validator = npm.substring(0, 13);
+        int kodeNpm = Integer.parseInt(String.valueOf(npm.charAt(13)));
+        // Melakukan penjumlahan pasangan digit
+        for (int i = 0; i <= 5; i++) {
+            // Mengembil 2 digit yang berpasangan
+            int validator1 = Integer.parseInt(String.valueOf(validator.charAt(i)));
+            int validator2 = Integer.parseInt(String.valueOf(validator.charAt(12 - i)));
 
-                // Melakukan penjumlahan 2 digit tersebut
-                counter1 += validator1 * validator2;
-            }
-            // Menambahkan counter dengan digit NPM terakhir
-            counter1 += kodeNpm;
+            // Melakukan penjumlahan 2 digit tersebut
+            counter1 += validator1 * validator2;
+        }
+        // Menambahkan counter dengan digit NPM terakhir
+        counter1 += Integer.parseInt(String.valueOf(validator.charAt(6)));
 
-            // Loop untuk menjumlahkan digit-digit NPM setelah melakukan penjumlahan pasangan digit
-            while (counter1 >= 10) {
-                while (counter1 > 0) {
-                    counter2 += counter1 % 10;
-                    counter1 /= 10;
-                }
-                counter1 = counter2;
+        // Loop untuk menjumlahkan digit-digit NPM setelah melakukan penjumlahan pasangan digit
+        while (counter1 >= 10) {
+            while (counter1 > 0) {
+                counter2 += counter1 % 10;
+                counter1 /= 10;
             }
+            counter1 = counter2;
+        }
 
-            // Mengecek apakah hasil penjumlahan digit-digit tersebut == Kode NPM
-            if (counter1 == kodeNpm) {
-                return true;
-            } else {
-                return false;
-            }
-        } else { // Jika NPM tidak memiliki 14 angka
+        // Mengecek apakah hasil penjumlahan digit-digit tersebut == Kode NPM
+        if (counter1 == kodeNpm) {
+            return true;
+        } else {
             return false;
         }
     }
