@@ -97,11 +97,10 @@ public class ExtractNPM {
                 counter2 += counter1 % 10;
                 counter1 /= 10;
             }
-            counter1 = counter2;
         }
 
         // Mengecek apakah hasil penjumlahan digit-digit tersebut == Kode NPM
-        if (counter1 == kodeNpm) {
+        if (counter2 == kodeNpm) {
             return true;
         } else {
             return false;
