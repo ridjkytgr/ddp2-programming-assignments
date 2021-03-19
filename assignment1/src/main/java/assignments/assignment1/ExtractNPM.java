@@ -92,11 +92,9 @@ public class ExtractNPM {
         counter1 += Integer.parseInt(String.valueOf(validator.charAt(6)));
 
         // Loop untuk menjumlahkan digit-digit NPM setelah melakukan penjumlahan pasangan digit
-        while (counter1 >= 10) {
-            while (counter1 > 0) {
-                counter2 += counter1 % 10;
-                counter1 /= 10;
-            }
+        while (counter1 > 0) {
+            counter2 += counter1 % 10;
+            counter1 /= 10;
         }
 
         // Mengecek apakah hasil penjumlahan digit-digit tersebut == Kode NPM
