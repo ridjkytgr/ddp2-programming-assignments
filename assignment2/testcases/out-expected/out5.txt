@@ -1,0 +1,77 @@
+====================== Sistem Akademik =======================
+
+Selamat datang di Sistem Akademik Fasilkom!
+Banyaknya Matkul di Fasilkom: Masukkan matkul yang ditambah
+format: [Kode Matkul] [Nama Matkul] [SKS] [Kapasitas]
+Banyaknya Mahasiswa di Fasilkom: Masukkan data mahasiswa
+format: [Nama] [NPM]
+
+----------------------------MENU------------------------------
+
+Silakan pilih menu:
+1. Add Matkul
+2. Drop Matkul
+3. Ringkasan Mahasiswa
+4. Ringkasan Mata Kuliah
+5. Keluar
+
+Pilih: 
+
+--------------------------DROP MATKUL--------------------------
+
+Masukkan NPM Mahasiswa yang akan melakukan DROP MATKUL : [DITOLAK] Belum ada mata kuliah yang diambil.
+
+----------------------------MENU------------------------------
+
+Silakan pilih menu:
+1. Add Matkul
+2. Drop Matkul
+3. Ringkasan Mahasiswa
+4. Ringkasan Mata Kuliah
+5. Keluar
+
+Pilih: 
+Masukkan npm mahasiswa yang akan ditunjukkan ringkasannya : 
+--------------------------RINGKASAN--------------------------
+
+Nama: Alvin
+NPM: 18010110200023
+Jurusan: Ilmu Komputer
+Daftar Mata Kuliah: 
+Belum ada mata kuliah yang diambil
+Total SKS: 0
+Hasil Pengecekan IRS:
+IRS tidak bermasalah.
+
+----------------------------MENU------------------------------
+
+Silakan pilih menu:
+1. Add Matkul
+2. Drop Matkul
+3. Ringkasan Mahasiswa
+4. Ringkasan Mata Kuliah
+5. Keluar
+
+Pilih: 
+Masukkan nama mata kuliah yang akan ditunjukkan ringkasannya : 
+--------------------------RINGKASAN--------------------------
+
+Nama mata kuliah: OS
+Kode: CS
+SKS: 3
+Jumlah mahasiswa: 0
+Kapasitas: 2
+Daftar mahasiswa yang mengambil mata kuliah ini: 
+Belum ada mahasiswa yang mengambil mata kuliah ini.
+
+----------------------------MENU------------------------------
+
+Silakan pilih menu:
+1. Add Matkul
+2. Drop Matkul
+3. Ringkasan Mahasiswa
+4. Ringkasan Mata Kuliah
+5. Keluar
+
+Pilih: 
+Sampai jumpa!

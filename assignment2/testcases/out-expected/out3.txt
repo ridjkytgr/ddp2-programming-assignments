@@ -1,0 +1,165 @@
+====================== Sistem Akademik =======================
+
+Selamat datang di Sistem Akademik Fasilkom!
+Banyaknya Matkul di Fasilkom: Masukkan matkul yang ditambah
+format: [Kode Matkul] [Nama Matkul] [SKS] [Kapasitas]
+Banyaknya Mahasiswa di Fasilkom: Masukkan data mahasiswa
+format: [Nama] [NPM]
+
+----------------------------MENU------------------------------
+
+Silakan pilih menu:
+1. Add Matkul
+2. Drop Matkul
+3. Ringkasan Mahasiswa
+4. Ringkasan Mata Kuliah
+5. Keluar
+
+Pilih: 
+
+--------------------------ADD MATKUL--------------------------
+
+Masukkan NPM Mahasiswa yang akan melakukan ADD MATKUL : Banyaknya Matkul yang Ditambah: Masukkan nama matkul yang ditambah
+Nama matakuliah 01 : Nama matakuliah 11 : Nama matakuliah 21 : 
+Silakan cek rekap untuk melihat hasil pengecekan IRS.
+
+
+----------------------------MENU------------------------------
+
+Silakan pilih menu:
+1. Add Matkul
+2. Drop Matkul
+3. Ringkasan Mahasiswa
+4. Ringkasan Mata Kuliah
+5. Keluar
+
+Pilih: 
+Masukkan npm mahasiswa yang akan ditunjukkan ringkasannya : 
+--------------------------RINGKASAN--------------------------
+
+Nama: Dek
+NPM: 19020110200012
+Jurusan: Sistem Informasi
+Daftar Mata Kuliah: 
+1. Adpro
+2. PPM
+3. OS
+Total SKS: 10
+Hasil Pengecekan IRS:
+1. Mata Kuliah Adpro tidak dapat diambil jurusan SI
+
+----------------------------MENU------------------------------
+
+Silakan pilih menu:
+1. Add Matkul
+2. Drop Matkul
+3. Ringkasan Mahasiswa
+4. Ringkasan Mata Kuliah
+5. Keluar
+
+Pilih: 
+
+--------------------------ADD MATKUL--------------------------
+
+Masukkan NPM Mahasiswa yang akan melakukan ADD MATKUL : Banyaknya Matkul yang Ditambah: Masukkan nama matkul yang ditambah
+Nama matakuliah 01 : Nama matakuliah 11 : 
+Silakan cek rekap untuk melihat hasil pengecekan IRS.
+
+
+----------------------------MENU------------------------------
+
+Silakan pilih menu:
+1. Add Matkul
+2. Drop Matkul
+3. Ringkasan Mahasiswa
+4. Ringkasan Mata Kuliah
+5. Keluar
+
+Pilih: 
+Masukkan npm mahasiswa yang akan ditunjukkan ringkasannya : 
+--------------------------RINGKASAN--------------------------
+
+Nama: De
+NPM: 19010110200023
+Jurusan: Ilmu Komputer
+Daftar Mata Kuliah: 
+1. OS
+2. Adpro
+Total SKS: 7
+Hasil Pengecekan IRS:
+IRS tidak bermasalah.
+
+----------------------------MENU------------------------------
+
+Silakan pilih menu:
+1. Add Matkul
+2. Drop Matkul
+3. Ringkasan Mahasiswa
+4. Ringkasan Mata Kuliah
+5. Keluar
+
+Pilih: 
+
+--------------------------ADD MATKUL--------------------------
+
+Masukkan NPM Mahasiswa yang akan melakukan ADD MATKUL : Banyaknya Matkul yang Ditambah: Masukkan nama matkul yang ditambah
+Nama matakuliah 01 : [DITOLAK] OS telah penuh kapasitasnya.
+
+Silakan cek rekap untuk melihat hasil pengecekan IRS.
+
+
+----------------------------MENU------------------------------
+
+Silakan pilih menu:
+1. Add Matkul
+2. Drop Matkul
+3. Ringkasan Mahasiswa
+4. Ringkasan Mata Kuliah
+5. Keluar
+
+Pilih: 
+Masukkan nama mata kuliah yang akan ditunjukkan ringkasannya : 
+--------------------------RINGKASAN--------------------------
+
+Nama mata kuliah: OS
+Kode: CS
+SKS: 3
+Jumlah mahasiswa: 2
+Kapasitas: 2
+Daftar mahasiswa yang mengambil mata kuliah ini: 
+1. Dek
+2. De
+
+----------------------------MENU------------------------------
+
+Silakan pilih menu:
+1. Add Matkul
+2. Drop Matkul
+3. Ringkasan Mahasiswa
+4. Ringkasan Mata Kuliah
+5. Keluar
+
+Pilih: 
+Masukkan npm mahasiswa yang akan ditunjukkan ringkasannya : 
+--------------------------RINGKASAN--------------------------
+
+Nama: Pe
+NPM: 19012808200017
+Jurusan: Ilmu Komputer
+Daftar Mata Kuliah: 
+Belum ada mata kuliah yang diambil
+Total SKS: 0
+Hasil Pengecekan IRS:
+IRS tidak bermasalah.
+
+----------------------------MENU------------------------------
+
+Silakan pilih menu:
+1. Add Matkul
+2. Drop Matkul
+3. Ringkasan Mahasiswa
+4. Ringkasan Mata Kuliah
+5. Keluar
+
+Pilih: 
+Sampai jumpa!

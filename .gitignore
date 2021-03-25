@@ -210,3 +210,6 @@ build
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# DDP2 additional ignore
+assignment2/testcases/out-mhs/*
