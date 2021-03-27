@@ -15,6 +15,11 @@ public class SistemAkademik {
 
     private Mahasiswa getMahasiswa(long npm) {
         /* TODO: Implementasikan kode Anda di sini */
+        for (int i = 0; i < daftarMahasiswa.length; i++) {
+            if (daftarMahasiswa[i].getNpm() == npm) {
+
+            }
+        }
         return null;
     }
 
