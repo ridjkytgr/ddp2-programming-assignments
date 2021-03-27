@@ -213,8 +213,7 @@ Pilih:
 --------------------------ADD MATKUL--------------------------
 
 Masukkan NPM Mahasiswa yang akan melakukan ADD MATKUL : Banyaknya Matkul yang Ditambah: Masukkan nama matkul yang ditambah
-Nama matakuliah 01 : Nama matakuliah 11 : [DITOLAK] Maksimal mata kuliah yang diambil hanya 9.
-Nama matakuliah 21 : [DITOLAK] Maksimal mata kuliah yang diambil hanya 9.
+Nama matakuliah 01 : Nama matakuliah 11 : Nama matakuliah 21 : [DITOLAK] Maksimal mata kuliah yang diambil hanya 10.
 
 Silakan cek rekap untuk melihat hasil pengecekan IRS.
 
@@ -245,7 +244,8 @@ Daftar Mata Kuliah:
 7. Alin
 8. Sister
 9. PPSI
-Total SKS: 28
+10. Edagang
+Total SKS: 31
 Hasil Pengecekan IRS:
 1. SKS yang Anda ambil lebih dari 24
 2. Mata Kuliah Adpro tidak dapat diambil jurusan SI
