@@ -1,7 +1,7 @@
 package assignments.assignment2;
 
 public class Mahasiswa {
-    private MataKuliah[] mataKuliah = new MataKuliah[10];
+    private MataKuliah[] daftarMataKuliah = new MataKuliah[10];
     private String[] masalahIRS;
     private int totalSKS;
     private String nama;
@@ -28,16 +28,29 @@ public class Mahasiswa {
         return masalahIRS;
     }
 
-    public String jurusan() {
+    public String getJurusan() {
         return jurusan;
+    }
+
+    public MataKuliah[] getDaftarMataKuliah() {
+        return daftarMataKuliah;
     }
 
     public long getNpm() {
         return npm;
     }
 
+    public boolean validateAddMatkul(MataKuliah mataKuliah) {
+        for (int i = 0; i < 10; i++) {
+            if (daftarMataKuliah[i] == mataKuliah) {
+                System.out.println("[DITOLAK] " + daftarMataKuliah[i].toString() + "telah diambil sebelumnya");
+            } else if (daftarMataKuliah[i].getKapasitas())
+        }
+    }
+
     public void addMatkul(MataKuliah mataKuliah){
         /* TODO: implementasikan kode Anda di sini */
+
     }
 
     public void dropMatkul(MataKuliah mataKuliah){
@@ -49,12 +62,12 @@ public class Mahasiswa {
         int counterKode = 1;
         boolean statusSKS = true;
         /* TODO: implementasikan kode Anda di sini */
-        for (int i = 0; i < mataKuliah.length; i++) {
-            if (!mataKuliah[i].getKode().equals(this.jurusan)) {
+        for (int i = 0; i < daftarMataKuliah.length; i++) {
+            if (!daftarMataKuliah[i].getKode().equals(jurusan)) {
                 counterKode *= 0;
             }
         }
-        if (this.getTotalSKS() > 24) {
+        if (totalSKS > 24) {
             statusSKS = false;
         }
         if (counterKode == 1 && statusSKS) {

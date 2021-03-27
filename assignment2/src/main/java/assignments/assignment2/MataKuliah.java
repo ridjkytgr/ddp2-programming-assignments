@@ -13,14 +13,11 @@ public class MataKuliah {
         this.nama = nama;
         this.sks = sks;
         this.kapasitas = kapasitas;
+        this.daftarMahasiswa = new Mahasiswa[kapasitas];
     }
 
     public String getKode() {
         return kode;
-    }
-
-    public String getNama() {
-        return nama;
     }
 
     public int getSks() {
@@ -31,18 +28,29 @@ public class MataKuliah {
         return kapasitas;
     }
 
-    public void addMahasiswa(Mahasiswa mahasiswa) {
-        /* TODO: implementasikan kode Anda di sini */
+    public Mahasiswa[] getDaftarMahasiswa() {
+        return daftarMahasiswa;
+    }
 
+    public void addMahasiswa(Mahasiswa mahasiswa) {
+        for (int i = 0; i < daftarMahasiswa.length; i++) {
+         this.daftarMahasiswa[i] = mahasiswa;
+        }
     }
 
     public void dropMahasiswa(Mahasiswa mahasiswa) {
-        /* TODO: implementasikan kode Anda di sini */
-
+        // Membuat array baru yang berisi daftar mahasiswa yang telah di-drop
+        Mahasiswa[] daftarMahasiswaDrop = new Mahasiswa[kapasitas];
+        for (int i = 0; i < daftarMahasiswa.length; i++) {
+            if (daftarMahasiswa[i] != mahasiswa) {
+                daftarMahasiswaDrop[i] = mahasiswa;
+            } else {
+                continue;
+            }
+        }
     }
 
     public String toString() {
-        /* TODO: implementasikan kode Anda di sini */
-        return "";
+        return nama;
     }
 }
