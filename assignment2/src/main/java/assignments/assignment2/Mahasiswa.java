@@ -90,20 +90,32 @@ public class Mahasiswa {
 
     /* TODO: SKIP, kerjain nanti aja */
     public void cekIRS(){
+        int numOfMasalahIRS = 0;
         boolean counterKode = true;
         boolean statusSKS = true;
         /* TODO: implementasikan kode Anda di sini */
         for (int i = 0; i < 10; i++) {
             if (!daftarMataKuliah[i].getKode().equals(this.jurusan) && !daftarMataKuliah[i].getKode().equals("CS")) {
                 counterKode = false;
-            } else {
+                masalahIRS[numOfMasalahIRS] = "Mata Kuliah " + daftarMataKuliah[i] + " tidak dapat diambil jurusan " + this.jurusan;
+                numOfMasalahIRS++;
             }
         }
+
         if (totalSKS > 24) {
             statusSKS = false;
+            masalahIRS[numOfMasalahIRS] = "SKS yang Anda ambil lebih dari 24";
         }
+
         if (counterKode == true && statusSKS) {
+            System.out.println("Hasil Pengecekan IRS:");
             System.out.println("IRS tidak bermasalah");
+        } else {
+            int counterPrint = 1;
+            for (int i = 0; i < numOfMasalahIRS; i++) {
+                System.out.println(counterPrint + ". " + masalahIRS[i]);
+                counterPrint++;
+            }
         }
     }
 
