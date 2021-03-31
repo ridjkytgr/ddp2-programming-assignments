@@ -38,6 +38,16 @@ public class MataKuliah {
         }
     }
 
+    public int calcJumlahMahasiswa() {
+        int jumlahMahasiswa = 0;
+        for (int i = 0; i < daftarMahasiswa.length; i++) {
+            if (daftarMahasiswa[i] != null) {
+                jumlahMahasiswa++;
+            }
+        }
+        return jumlahMahasiswa;
+    }
+
     public void dropMahasiswa(Mahasiswa mahasiswa) {
         // Membuat array baru yang berisi daftar mahasiswa yang telah di-drop
         Mahasiswa[] daftarMahasiswaDrop = new Mahasiswa[kapasitas];
