@@ -72,6 +72,7 @@ public class Mahasiswa {
             for (int i = 0; i < 10; i++) {
                 if (daftarMataKuliah[i] != null) {
                     daftarMataKuliah[i] = mataKuliah;
+                    this.totalSKS += daftarMataKuliah[i].getSks();
                     break;
                 }
             }
