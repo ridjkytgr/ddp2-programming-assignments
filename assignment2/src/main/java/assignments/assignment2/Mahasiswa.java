@@ -27,10 +27,6 @@ public class Mahasiswa {
         return totalSKS;
     }
 
-    public String[] getMasalahIRS() {
-        return masalahIRS;
-    }
-
     public String getJurusan() {
         return jurusan;
     }
@@ -55,17 +51,16 @@ public class Mahasiswa {
 
     public boolean validateAddMatkul(MataKuliah mataKuliah) {
         // Melakukan pengecekan jumlah mata kuliah yang telah diambil
-        numOfMataKuliah = this.getNumOfMataKuliah();
 
         for (int i = 0; i < 10; i++) {
-            if (daftarMataKuliah[i].equals(mataKuliah)) {
+            if (daftarMataKuliah[i] != null && daftarMataKuliah[i].equals(mataKuliah)) {
                 System.out.println("[DITOLAK] " + daftarMataKuliah[i].toString() + "telah diambil sebelumnya");
-            } else if (daftarMataKuliah[i].getKapasitas() == daftarMataKuliah[i].calcJumlahMahasiswa()) {
+            } else if (daftarMataKuliah[i] != null && daftarMataKuliah[i].getKapasitas() == daftarMataKuliah[i].calcJumlahMahasiswa()) {
                 System.out.println("[DITOLAK] " + daftarMataKuliah[i].toString() + "telah penuh kapasitasnya");
             } else if (numOfMataKuliah == 10) {
                 System.out.println("[DITOLAK] Maksimal mata kuliah yang diambil hanya 10");
             } else {
-                numOfMataKuliah++;
+                this.numOfMataKuliah++;
                 return true;
             }
         }
@@ -75,15 +70,14 @@ public class Mahasiswa {
     public void addMatkul(MataKuliah mataKuliah) {
         /* TODO: implementasikan kode Anda di sini */
         for (int i = 0; i < 10; i++) {
-            if (daftarMataKuliah[i] != null) {
+            if (daftarMataKuliah[i] == null) {
                 daftarMataKuliah[i] = mataKuliah;
                 this.totalSKS += daftarMataKuliah[i].getSks();
+                this.numOfMataKuliah++;
                 break;
             }
         }
     }
-
-
 
     public void dropMatkul(MataKuliah mataKuliah){
         /* TODO: implementasikan kode Anda di sini */
@@ -94,19 +88,27 @@ public class Mahasiswa {
         }
     }
 
-    /* TODO: SKIP, kerjain nanti aja */
     public void cekIRS(){
         int numOfMasalahIRS = 0;
         // flagKode dan statusSKS untuk memastikan IRS mahasiswa tidak bermasalah (agar bisa dicetak string-nya)
         boolean flagKode = true;
         boolean statusSKS = true;
+        String singkatan;
+        // Melakukan encoding jurusan menjadi bentuk singkatan.
+        if (jurusan.equals("Ilmu Komputer")) {
+            singkatan = "IK";
+        } else {
+            singkatan = "SI";
+        }
 
         // Melakukan pengecekan jurusan mahasiswa dengan kode mataKuliah
         for (int i = 0; i < 10; i++) {
-            if (!daftarMataKuliah[i].getKode().equals(this.jurusan) && !daftarMataKuliah[i].getKode().equals("CS")) {
-                flagKode = false;
-                masalahIRS[numOfMasalahIRS] = "Mata Kuliah " + daftarMataKuliah[i] + " tidak dapat diambil jurusan " + this.jurusan;
-                numOfMasalahIRS++;
+            if (daftarMataKuliah[i] != null && !daftarMataKuliah[i].getKode().equals(singkatan)) {
+                if (!daftarMataKuliah[i].getKode().equals("CS")) {
+                    flagKode = false;
+                    masalahIRS[numOfMasalahIRS] = "Mata Kuliah " + daftarMataKuliah[i] + " tidak dapat diambil jurusan " + this.jurusan;
+                    numOfMasalahIRS++;
+                }
             }
         }
 
@@ -118,7 +120,6 @@ public class Mahasiswa {
 
         // Melakukan pengecekan IRS secara keseluruhan
         if (flagKode && statusSKS) {
-            System.out.println("Hasil Pengecekan IRS:");
             System.out.println("IRS tidak bermasalah");
         } else {
             int counterPrint = 1;
