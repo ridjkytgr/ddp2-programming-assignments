@@ -107,17 +107,29 @@ public class SistemAkademik {
     private void ringkasanMataKuliah(){
         System.out.print("Masukkan nama mata kuliah yang akan ditunjukkan ringkasannya : ");
         String namaMataKuliah = input.nextLine();
-        
+        MataKuliah mataKuliah = getMataKuliah(namaMataKuliah);
+        int jumlahMahasiswa = mataKuliah.calcJumlahMahasiswa();
+
         // TODO: Isi sesuai format keluaran
         System.out.println("\n--------------------------RINGKASAN--------------------------\n");
-        System.out.println("Nama mata kuliah: " + "");
-        System.out.println("Kode: " + "");
-        System.out.println("SKS: " + "");
-        System.out.println("Jumlah mahasiswa: " + "");
-        System.out.println("Kapasitas: " + "");
+        System.out.println("Nama mata kuliah: " + mataKuliah);
+        System.out.println("Kode: " + mataKuliah.getKode());
+        System.out.println("SKS: " + mataKuliah.getSks());
+        System.out.println("Jumlah mahasiswa: " + jumlahMahasiswa);
+        System.out.println("Kapasitas: " + mataKuliah.getKapasitas());
         System.out.println("Daftar mahasiswa yang mengambil mata kuliah ini: ");
-       /* TODO: Cetak hasil cek IRS
-        Handle kasus jika tidak ada mahasiswa yang mengambil */
+
+        if (jumlahMahasiswa == 0) {
+            System.out.println("Belum ada mahasiswa yang mengambil mata kuliah ini.");
+        } else {
+            // Membuat variabel counter untuk formatting saat pencetakan.
+            int counterMahasiswa = 1;
+            Mahasiswa[] daftarMahasiswa = mataKuliah.getDaftarMahasiswa();
+            for (int i = 0; i < jumlahMahasiswa; i++) {
+                System.out.println(counterMahasiswa + ". " + daftarMahasiswa[i]);
+                counterMahasiswa++;
+            }
+        }
     }
 
     private void daftarMenu(){
@@ -186,9 +198,7 @@ public class SistemAkademik {
             long npm = Long.parseLong(dataMahasiswa[1]);
             String nama = dataMahasiswa[0];
 
-            /* Membuat instance mahasiswa dan menyimpannya di dalam array
-            Tidak membuat variabel tambahan karena jumlah mahasiswa sudah fix dari awal (Tidak ada add mahasiswa).
-             */
+            // Membuat instance mahasiswa dan menyimpannya di dalam array
             Mahasiswa mahasiswa = new Mahasiswa(nama, npm);
             daftarMahasiswa[i] = mahasiswa;
 
