@@ -73,27 +73,36 @@ public class SistemAkademik {
         System.out.println("\nSilakan cek rekap untuk melihat hasil pengecekan IRS.\n");
     }
 
-    private void ringkasanMahasiswa(){
+    private void ringkasanMahasiswa() {
         System.out.print("Masukkan npm mahasiswa yang akan ditunjukkan ringkasannya : ");
         long npm = Long.parseLong(input.nextLine());
+        Mahasiswa mahasiswa = getMahasiswa(npm);
 
-        // TODO: Isi sesuai format keluaran
         System.out.println("\n--------------------------RINGKASAN--------------------------\n");
-        System.out.println("Nama: " + "");
+        System.out.println("Nama: " + mahasiswa);
         System.out.println("NPM: " + npm);
-        System.out.println("Jurusan: " + "");
+        System.out.println("Jurusan: " + mahasiswa.getJurusan());
         System.out.println("Daftar Mata Kuliah: ");
 
-        /* TODO: Cetak daftar mata kuliah 
-        Handle kasus jika belum ada mata kuliah yang diambil*/
+        int numOfMataKuliah = mahasiswa.getNumOfMataKuliah();
+        int formatCounter = 1;
 
-        System.out.println("Total SKS: " + "");
-        
-        System.out.println("Hasil Pengecekan IRS:");
+        // Handling jika mahasiswa belum mengambil mata kuliah sama sekali.
+        if (numOfMataKuliah == 0) {
+            System.out.println("Belum ada mata kuliah yang diambil");
+        } else {
+            MataKuliah[] mataKuliah = mahasiswa.getDaftarMataKuliah();
+            for (int i = 0; i < numOfMataKuliah; i++) {
+                System.out.println(formatCounter + ". " + mataKuliah[i]);
+                formatCounter++;
+            }
+            System.out.println("Total SKS: " + mahasiswa.getTotalSKS());
+            System.out.println("Hasil Pengecekan IRS:");
         /* TODO: Cetak hasil cek IRS
         Handle kasus jika IRS tidak bermasalah */
+            mahasiswa.cekIRS();
+        }
     }
-
     private void ringkasanMataKuliah(){
         System.out.print("Masukkan nama mata kuliah yang akan ditunjukkan ringkasannya : ");
         String namaMataKuliah = input.nextLine();

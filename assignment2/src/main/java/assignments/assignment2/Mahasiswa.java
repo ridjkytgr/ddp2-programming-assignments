@@ -7,6 +7,7 @@ public class Mahasiswa {
     private String nama;
     private String jurusan;
     private long npm;
+    private int numOfMataKuliah;
 
     public Mahasiswa(String nama, long npm){
         this.nama = nama;
@@ -42,15 +43,20 @@ public class Mahasiswa {
         return npm;
     }
 
-    public boolean validateAddMatkul(MataKuliah mataKuliah) {
-        // Melakukan pengecekan jumlah mata kuliah yang telah diambil
-        int numOfMataKuliah = 0;
-
+    public int getNumOfMataKuliah() {
+        numOfMataKuliah = 0;
         for (int i = 0; i < 10; i++) {
             if (daftarMataKuliah[i] != null) {
                 numOfMataKuliah++;
             }
         }
+        return numOfMataKuliah;
+    }
+
+    public boolean validateAddMatkul(MataKuliah mataKuliah) {
+        // Melakukan pengecekan jumlah mata kuliah yang telah diambil
+        numOfMataKuliah = this.getNumOfMataKuliah();
+
         for (int i = 0; i < 10; i++) {
             if (daftarMataKuliah[i].equals(mataKuliah)) {
                 System.out.println("[DITOLAK] " + daftarMataKuliah[i].toString() + "telah diambil sebelumnya");
@@ -91,12 +97,14 @@ public class Mahasiswa {
     /* TODO: SKIP, kerjain nanti aja */
     public void cekIRS(){
         int numOfMasalahIRS = 0;
-        boolean counterKode = true;
+        // flagKode dan statusSKS untuk memastikan IRS mahasiswa tidak bermasalah (agar bisa dicetak string-nya)
+        boolean flagKode = true;
         boolean statusSKS = true;
-        /* TODO: implementasikan kode Anda di sini */
+
+        // Melakukan pengecekan jurusan mahasiswa dengan kode mataKuliah
         for (int i = 0; i < 10; i++) {
             if (!daftarMataKuliah[i].getKode().equals(this.jurusan) && !daftarMataKuliah[i].getKode().equals("CS")) {
-                counterKode = false;
+                flagKode = false;
                 masalahIRS[numOfMasalahIRS] = "Mata Kuliah " + daftarMataKuliah[i] + " tidak dapat diambil jurusan " + this.jurusan;
                 numOfMasalahIRS++;
             }
@@ -105,9 +113,11 @@ public class Mahasiswa {
         if (totalSKS > 24) {
             statusSKS = false;
             masalahIRS[numOfMasalahIRS] = "SKS yang Anda ambil lebih dari 24";
+            // Tidak menambahkan numOfMasalahIRS karena akan menyebabkan overprinting string.
         }
 
-        if (counterKode == true && statusSKS) {
+        // Melakukan pengecekan IRS secara keseluruhan
+        if (flagKode && statusSKS) {
             System.out.println("Hasil Pengecekan IRS:");
             System.out.println("IRS tidak bermasalah");
         } else {
