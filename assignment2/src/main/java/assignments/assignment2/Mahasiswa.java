@@ -59,7 +59,7 @@ public class Mahasiswa {
             } else if (numOfMataKuliah == 10) {
                 System.out.println("[DITOLAK] Maksimal mata kuliah yang diambil hanya 10");
             } else {
-                numOfMataKuliah += 1;
+                numOfMataKuliah++;
                 return true;
             }
         }

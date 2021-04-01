@@ -15,9 +15,9 @@ public class SistemAkademik {
 
     private Mahasiswa getMahasiswa(long npm) {
         /* TODO: Implementasikan kode Anda di sini */
-        for (int i = 0; i < daftarMahasiswa.length; i++) {
+        for (int i = 0; i < 100; i++) {
             if (daftarMahasiswa[i].getNpm() == npm) {
-
+                return daftarMahasiswa[i];
             }
         }
         return null;
@@ -25,6 +25,11 @@ public class SistemAkademik {
 
     private MataKuliah getMataKuliah(String namaMataKuliah) {
         /* TODO: Implementasikan kode Anda di sini */
+        for (int i = 0; i < daftarMataKuliah.length; i++) {
+            if (daftarMataKuliah[i].toString().equals(namaMataKuliah)) {
+                return daftarMataKuliah[i];
+            }
+        }
         return null;
     }
 
