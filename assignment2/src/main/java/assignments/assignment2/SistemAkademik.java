@@ -8,9 +8,14 @@ public class SistemAkademik {
     private static final int RINGKASAN_MAHASISWA = 3;
     private static final int RINGKASAN_MATAKULIAH = 4;
     private static final int KELUAR = 5;
+
+    // Menambahkan variabel untuk menyimpan banyaknya mata kuliah yang telah ditambahkan.
+    private static int banyakMataKuliah;
+
     private static Mahasiswa[] daftarMahasiswa = new Mahasiswa[100];
     private static MataKuliah[] daftarMataKuliah = new MataKuliah[100];
-    
+
+
     private Scanner input = new Scanner(System.in);
 
     private Mahasiswa getMahasiswa(long npm) {
@@ -165,9 +170,15 @@ public class SistemAkademik {
 
         for(int i=0; i<banyakMatkul; i++){
             String[] dataMatkul = input.nextLine().split(" ", 4);
+            String kode = dataMatkul[0];
+            String nama = dataMatkul[1];
             int sks = Integer.parseInt(dataMatkul[2]);
             int kapasitas = Integer.parseInt(dataMatkul[3]);
-            /* TODO: Buat instance mata kuliah dan masukkan ke dalam Array */
+
+            // Membuat instance MataKuliah dan menambahkannya ke dalam array.
+            MataKuliah mataKuliah = new MataKuliah(kode, nama, sks, kapasitas);
+            daftarMataKuliah[banyakMataKuliah] = mataKuliah;
+            banyakMataKuliah++;
         }
 
         System.out.print("Banyaknya Mahasiswa di Fasilkom: ");
@@ -178,7 +189,14 @@ public class SistemAkademik {
         for(int i=0; i<banyakMahasiswa; i++){
             String[] dataMahasiswa = input.nextLine().split(" ", 2);
             long npm = Long.parseLong(dataMahasiswa[1]);
-            /* TODO: Buat instance mata kuliah dan masukkan ke dalam Array */
+            String nama = dataMahasiswa[0];
+
+            /* Membuat instance mahasiswa dan menyimpannya di dalam array
+            Tidak membuat variabel tambahan karena jumlah mahasiswa sudah fix dari awal (Tidak ada add mahasiswa).
+             */
+            Mahasiswa mahasiswa = new Mahasiswa(nama, npm);
+            daftarMahasiswa[i] = mahasiswa;
+
         }
 
         daftarMenu();
