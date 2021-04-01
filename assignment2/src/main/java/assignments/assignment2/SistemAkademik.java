@@ -8,10 +8,6 @@ public class SistemAkademik {
     private static final int RINGKASAN_MAHASISWA = 3;
     private static final int RINGKASAN_MATAKULIAH = 4;
     private static final int KELUAR = 5;
-
-    // Menambahkan variabel untuk menyimpan banyaknya mata kuliah yang telah ditambahkan.
-    private static int banyakMataKuliah;
-
     private static Mahasiswa[] daftarMahasiswa = new Mahasiswa[100];
     private static MataKuliah[] daftarMataKuliah = new MataKuliah[100];
 
@@ -38,26 +34,26 @@ public class SistemAkademik {
         return null;
     }
 
-    private void addMatkul(){
+    private void addMatkul() {
         System.out.println("\n--------------------------ADD MATKUL--------------------------\n");
 
         System.out.print("Masukkan NPM Mahasiswa yang akan melakukan ADD MATKUL : ");
         long npm = Long.parseLong(input.nextLine());
-
-        /* TODO: Implementasikan kode Anda di sini 
-        Jangan lupa lakukan validasi apabila banyaknya matkul yang diambil mahasiswa sudah 9*/
+        Mahasiswa mahasiswa = getMahasiswa(npm);
 
         System.out.print("Banyaknya Matkul yang Ditambah: ");
         int banyakMatkul = Integer.parseInt(input.nextLine());
         System.out.println("Masukkan nama matkul yang ditambah");
-        for(int i=0; i<banyakMatkul; i++){
-            System.out.print("Nama matakuliah " + i+1 + " : ");
+        for (int i = 0; i < banyakMatkul; i++) {
+            System.out.print("Nama matakuliah " + i + 1 + " : ");
             String namaMataKuliah = input.nextLine();
-            /* TODO: Implementasikan kode Anda di sini */
+            MataKuliah instanceMataKuliah = getMataKuliah(namaMataKuliah);
+            if (mahasiswa.validateAddMatkul(instanceMataKuliah)) {
+                mahasiswa.addMatkul(instanceMataKuliah);
+            }
         }
         System.out.println("\nSilakan cek rekap untuk melihat hasil pengecekan IRS.\n");
     }
-
     private void dropMatkul(){
         System.out.println("\n--------------------------DROP MATKUL--------------------------\n");
 
@@ -66,6 +62,7 @@ public class SistemAkademik {
 
        /* TODO: Implementasikan kode Anda di sini 
         Jangan lupa lakukan validasi apabila mahasiswa belum mengambil mata kuliah*/
+
 
         System.out.print("Banyaknya Matkul yang Di-drop: ");
         int banyakMatkul = Integer.parseInt(input.nextLine());
@@ -103,8 +100,7 @@ public class SistemAkademik {
             }
             System.out.println("Total SKS: " + mahasiswa.getTotalSKS());
             System.out.println("Hasil Pengecekan IRS:");
-        /* TODO: Cetak hasil cek IRS
-        Handle kasus jika IRS tidak bermasalah */
+
             mahasiswa.cekIRS();
         }
     }
@@ -177,8 +173,7 @@ public class SistemAkademik {
 
             // Membuat instance MataKuliah dan menambahkannya ke dalam array.
             MataKuliah mataKuliah = new MataKuliah(kode, nama, sks, kapasitas);
-            daftarMataKuliah[banyakMataKuliah] = mataKuliah;
-            banyakMataKuliah++;
+            daftarMataKuliah[i] = mataKuliah;
         }
 
         System.out.print("Banyaknya Mahasiswa di Fasilkom: ");
