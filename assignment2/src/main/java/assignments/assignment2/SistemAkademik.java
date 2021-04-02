@@ -25,7 +25,6 @@ public class SistemAkademik {
     }
 
     private MataKuliah getMataKuliah(String namaMataKuliah) {
-        /* TODO: Implementasikan kode Anda di sini */
         for (int i = 0; i < daftarMataKuliah.length; i++) {
             if (daftarMataKuliah[i].toString().equals(namaMataKuliah)) {
                 return daftarMataKuliah[i];
@@ -44,12 +43,15 @@ public class SistemAkademik {
         System.out.print("Banyaknya Matkul yang Ditambah: ");
         int banyakMatkul = Integer.parseInt(input.nextLine());
         System.out.println("Masukkan nama matkul yang ditambah");
+
         for (int i = 0; i < banyakMatkul; i++) {
             System.out.print("Nama matakuliah " + i + 1 + " : ");
             String namaMataKuliah = input.nextLine();
             MataKuliah instanceMataKuliah = getMataKuliah(namaMataKuliah);
             if (mahasiswa.validateAddMatkul(instanceMataKuliah)) {
+                // Menambahkan matkul untuk mahasiswa, dan menambahkan mahasiswa pada matkul yang bersangkutan.
                 mahasiswa.addMatkul(instanceMataKuliah);
+                instanceMataKuliah.addMahasiswa(mahasiswa);
             }
         }
         System.out.println("\nSilakan cek rekap untuk melihat hasil pengecekan IRS.\n");
@@ -100,7 +102,6 @@ public class SistemAkademik {
             }
             System.out.println("Total SKS: " + mahasiswa.getTotalSKS());
             System.out.println("Hasil Pengecekan IRS:");
-
             mahasiswa.cekIRS();
         }
     }
@@ -110,7 +111,6 @@ public class SistemAkademik {
         MataKuliah mataKuliah = getMataKuliah(namaMataKuliah);
         int jumlahMahasiswa = mataKuliah.calcJumlahMahasiswa();
 
-        // TODO: Isi sesuai format keluaran
         System.out.println("\n--------------------------RINGKASAN--------------------------\n");
         System.out.println("Nama mata kuliah: " + mataKuliah);
         System.out.println("Kode: " + mataKuliah.getKode());
@@ -163,9 +163,7 @@ public class SistemAkademik {
                 exit = true;
             }
         }
-
     }
-
 
     private void run() {
         System.out.println("====================== Sistem Akademik =======================\n");
@@ -201,7 +199,6 @@ public class SistemAkademik {
             // Membuat instance mahasiswa dan menyimpannya di dalam array
             Mahasiswa mahasiswa = new Mahasiswa(nama, npm);
             daftarMahasiswa[i] = mahasiswa;
-
         }
 
         daftarMenu();

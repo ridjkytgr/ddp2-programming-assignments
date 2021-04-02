@@ -35,6 +35,7 @@ public class MataKuliah {
     public void addMahasiswa(Mahasiswa mahasiswa) {
         for (int i = 0; i < daftarMahasiswa.length; i++) {
          this.daftarMahasiswa[i] = mahasiswa;
+         break;
         }
     }
 
