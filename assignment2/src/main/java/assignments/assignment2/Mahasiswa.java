@@ -57,9 +57,9 @@ public class Mahasiswa {
     public boolean validateAddMatkul(MataKuliah mataKuliah) {
         for (int i = 0; i < 10; i++) {
             if (daftarMataKuliah[i] != null && daftarMataKuliah[i].equals(mataKuliah)) {
-                System.out.println("[DITOLAK] " + daftarMataKuliah[i].toString() + "telah diambil sebelumnya");
+                System.out.println("[DITOLAK] " + daftarMataKuliah[i] + " telah diambil sebelumnya");
             } else if (daftarMataKuliah[i] != null && daftarMataKuliah[i].getKapasitas() == daftarMataKuliah[i].calcJumlahMahasiswa()) {
-                System.out.println("[DITOLAK] " + daftarMataKuliah[i].toString() + "telah penuh kapasitasnya");
+                System.out.println("[DITOLAK] " + daftarMataKuliah[i] + " telah penuh kapasitasnya");
             } else if (numOfMataKuliah == 10) {
                 System.out.println("[DITOLAK] Maksimal mata kuliah yang diambil hanya 10");
             } else {
@@ -93,15 +93,15 @@ public class Mahasiswa {
     }
 
     public void dropMatkul(MataKuliah mataKuliah){
-        /* TODO: implementasikan kode Anda di sini */
+        MataKuliah[] temp = new MataKuliah[10];
         for (int i = 0; i < 10; i++) {
-            if (daftarMataKuliah[i] != null && daftarMataKuliah[i].equals(mataKuliah)) {
-                daftarMataKuliah[i] = null;
+            if (daftarMataKuliah[i] != null && !daftarMataKuliah[i].equals(mataKuliah)) {
+                temp[i] = daftarMataKuliah[i];
+            } else if (daftarMataKuliah[i] != null && daftarMataKuliah[i].equals(mataKuliah)){
                 this.totalSKS -= daftarMataKuliah[i].getSks();
-                this.numOfMataKuliah--;
-                break;
             }
         }
+        daftarMataKuliah = temp;
     }
 
     public void cekIRS(){
