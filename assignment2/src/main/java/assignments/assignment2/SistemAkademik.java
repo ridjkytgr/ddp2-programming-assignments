@@ -56,25 +56,32 @@ public class SistemAkademik {
         }
         System.out.println("\nSilakan cek rekap untuk melihat hasil pengecekan IRS.\n");
     }
-    private void dropMatkul(){
+    private void dropMatkul() {
         System.out.println("\n--------------------------DROP MATKUL--------------------------\n");
 
         System.out.print("Masukkan NPM Mahasiswa yang akan melakukan DROP MATKUL : ");
         long npm = Long.parseLong(input.nextLine());
+        Mahasiswa mahasiswa = getMahasiswa(npm);
 
-       /* TODO: Implementasikan kode Anda di sini 
-        Jangan lupa lakukan validasi apabila mahasiswa belum mengambil mata kuliah*/
+        if (mahasiswa.getNumOfMataKuliah() == 0) {
+            System.out.println("[DITOLAK] Belum ada mata kuliah yang diambil");
+        } else {
+            System.out.print("Banyaknya Matkul yang Di-drop: ");
+            int banyakMatkul = Integer.parseInt(input.nextLine());
+            System.out.println("Masukkan nama matkul yang di-drop:");
+            for (int i = 0; i < banyakMatkul; i++) {
+                System.out.print("Nama matakuliah " + i + 1 + " : ");
+                String namaMataKuliah = input.nextLine();
+                MataKuliah mataKuliah = getMataKuliah(namaMataKuliah);
 
-
-        System.out.print("Banyaknya Matkul yang Di-drop: ");
-        int banyakMatkul = Integer.parseInt(input.nextLine());
-        System.out.println("Masukkan nama matkul yang di-drop:");
-        for(int i=0; i<banyakMatkul; i++){
-            System.out.print("Nama matakuliah " + i+1 + " : ");
-            String namaMataKuliah = input.nextLine();
-            /* TODO: Implementasikan kode Anda di sini */
+                if (mahasiswa.validateDropMatkul(mataKuliah)) {
+                    mahasiswa.dropMatkul(mataKuliah);
+                } else {
+                    System.out.println("[DITOLAK] " + mataKuliah + " belum pernah diambil.");
+                }
+            }
+            System.out.println("\nSilakan cek rekap untuk melihat hasil pengecekan IRS.\n");
         }
-        System.out.println("\nSilakan cek rekap untuk melihat hasil pengecekan IRS.\n");
     }
 
     private void ringkasanMahasiswa() {

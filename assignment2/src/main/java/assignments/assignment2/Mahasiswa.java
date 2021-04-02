@@ -49,9 +49,12 @@ public class Mahasiswa {
         return numOfMataKuliah;
     }
 
+    /**
+     * Method untuk melakukan validasi sebelum menambahkan mata kuliah ke dalam array sesuai dengan prioritas validasi.
+     * @param mataKuliah object dengan class MataKuliah yang akan divalidasi.
+     * @return boolean yang bernilai true jika lolos validasi dan false jika sebaliknya.
+     */
     public boolean validateAddMatkul(MataKuliah mataKuliah) {
-        // Melakukan pengecekan jumlah mata kuliah yang telah diambil
-
         for (int i = 0; i < 10; i++) {
             if (daftarMataKuliah[i] != null && daftarMataKuliah[i].equals(mataKuliah)) {
                 System.out.println("[DITOLAK] " + daftarMataKuliah[i].toString() + "telah diambil sebelumnya");
@@ -68,7 +71,6 @@ public class Mahasiswa {
     }
 
     public void addMatkul(MataKuliah mataKuliah) {
-        /* TODO: implementasikan kode Anda di sini */
         for (int i = 0; i < 10; i++) {
             if (daftarMataKuliah[i] == null) {
                 daftarMataKuliah[i] = mataKuliah;
@@ -79,11 +81,25 @@ public class Mahasiswa {
         }
     }
 
+    public boolean validateDropMatkul (MataKuliah mataKuliah) {
+        // Membuat variabel boolean sebagai penanda jika telah menemukan mataKuliah yang sama.
+        boolean foundFlag = false;
+        for (int i = 0; i < 10; i++) {
+            if (daftarMataKuliah[i] != null && daftarMataKuliah[i].equals(mataKuliah)) {
+                foundFlag = true;
+            }
+        }
+        return foundFlag;
+    }
+
     public void dropMatkul(MataKuliah mataKuliah){
         /* TODO: implementasikan kode Anda di sini */
         for (int i = 0; i < 10; i++) {
-            if (daftarMataKuliah[i].equals(mataKuliah)) {
+            if (daftarMataKuliah[i] != null && daftarMataKuliah[i].equals(mataKuliah)) {
                 daftarMataKuliah[i] = null;
+                this.totalSKS -= daftarMataKuliah[i].getSks();
+                this.numOfMataKuliah--;
+                break;
             }
         }
     }
@@ -120,7 +136,7 @@ public class Mahasiswa {
 
         // Melakukan pengecekan IRS secara keseluruhan
         if (flagKode && statusSKS) {
-            System.out.println("IRS tidak bermasalah");
+            System.out.println("IRS tidak bermasalah.");
         } else {
             int counterPrint = 1;
             for (int i = 0; i < numOfMasalahIRS; i++) {
