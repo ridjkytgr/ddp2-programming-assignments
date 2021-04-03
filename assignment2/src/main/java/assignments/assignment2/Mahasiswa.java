@@ -58,12 +58,14 @@ public class Mahasiswa {
         for (int i = 0; i < 10; i++) {
             if (daftarMataKuliah[i] != null && daftarMataKuliah[i].equals(mataKuliah)) {
                 System.out.println("[DITOLAK] " + daftarMataKuliah[i] + " telah diambil sebelumnya");
+                return false;
             } else if (daftarMataKuliah[i] != null && daftarMataKuliah[i].getKapasitas() == daftarMataKuliah[i].calcJumlahMahasiswa()) {
                 System.out.println("[DITOLAK] " + daftarMataKuliah[i] + " telah penuh kapasitasnya");
+                return false;
             } else if (numOfMataKuliah == 10) {
                 System.out.println("[DITOLAK] Maksimal mata kuliah yang diambil hanya 10");
+                return false;
             } else {
-                this.numOfMataKuliah++;
                 return true;
             }
         }
@@ -94,9 +96,11 @@ public class Mahasiswa {
 
     public void dropMatkul(MataKuliah mataKuliah){
         MataKuliah[] temp = new MataKuliah[10];
+        int counter = 0;
         for (int i = 0; i < 10; i++) {
             if (daftarMataKuliah[i] != null && !daftarMataKuliah[i].equals(mataKuliah)) {
-                temp[i] = daftarMataKuliah[i];
+                temp[counter] = daftarMataKuliah[i];
+                counter++;
             } else if (daftarMataKuliah[i] != null && daftarMataKuliah[i].equals(mataKuliah)){
                 this.totalSKS -= daftarMataKuliah[i].getSks();
             }
@@ -117,22 +121,23 @@ public class Mahasiswa {
             singkatan = "SI";
         }
 
+        if (totalSKS > 24) {
+            statusSKS = false;
+            masalahIRS[numOfMasalahIRS] = "SKS yang Anda ambil lebih dari 24";
+            numOfMasalahIRS++;
+        }
+
         // Melakukan pengecekan jurusan mahasiswa dengan kode mataKuliah
         for (int i = 0; i < 10; i++) {
             if (daftarMataKuliah[i] != null && !daftarMataKuliah[i].getKode().equals(singkatan)) {
                 if (!daftarMataKuliah[i].getKode().equals("CS")) {
                     flagKode = false;
-                    masalahIRS[numOfMasalahIRS] = "Mata Kuliah " + daftarMataKuliah[i] + " tidak dapat diambil jurusan " + this.jurusan;
+                    masalahIRS[numOfMasalahIRS] = "Mata Kuliah " + daftarMataKuliah[i] + " tidak dapat diambil jurusan " + singkatan;
                     numOfMasalahIRS++;
                 }
             }
         }
-
-        if (totalSKS > 24) {
-            statusSKS = false;
-            masalahIRS[numOfMasalahIRS] = "SKS yang Anda ambil lebih dari 24";
-            // Tidak menambahkan numOfMasalahIRS karena akan menyebabkan overprinting string.
-        }
+        System.out.println("SKS mahasiswa saat ini adalah sebanyak: " + totalSKS);
 
         // Melakukan pengecekan IRS secara keseluruhan
         if (flagKode && statusSKS) {
