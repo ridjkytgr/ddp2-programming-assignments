@@ -15,7 +15,6 @@ public class SistemAkademik {
     private Scanner input = new Scanner(System.in);
 
     private Mahasiswa getMahasiswa(long npm) {
-        /* TODO: Implementasikan kode Anda di sini */
         for (int i = 0; i < 100; i++) {
             if (daftarMahasiswa[i].getNpm() == npm) {
                 return daftarMahasiswa[i];
@@ -76,6 +75,7 @@ public class SistemAkademik {
 
                 if (mahasiswa.validateDropMatkul(mataKuliah)) {
                     mahasiswa.dropMatkul(mataKuliah);
+                    mataKuliah.dropMahasiswa(mahasiswa);
                 } else {
                     System.out.println("[DITOLAK] " + mataKuliah + " belum pernah diambil.");
                 }
@@ -101,18 +101,23 @@ public class SistemAkademik {
         // Handling jika mahasiswa belum mengambil mata kuliah sama sekali.
         if (numOfMataKuliah == 0) {
             System.out.println("Belum ada mata kuliah yang diambil");
+            System.out.println("Total SKS: " + mahasiswa.getTotalSKS());
+            System.out.println("Hasil Pengecekan IRS: ");
+            mahasiswa.cekIRS();
         } else {
-            MataKuliah[] mataKuliah = mahasiswa.getDaftarMataKuliah();
+            MataKuliah[] daftarMataKuliah = mahasiswa.getDaftarMataKuliah();
             for (int i = 0; i < numOfMataKuliah; i++) {
-                System.out.println(formatCounter + ". " + mataKuliah[i]);
-                formatCounter++;
+                if (daftarMataKuliah[i] != null) {
+                    System.out.println(formatCounter + ". " + daftarMataKuliah[i]);
+                    formatCounter++;
+                }
             }
             System.out.println("Total SKS: " + mahasiswa.getTotalSKS());
             System.out.println("Hasil Pengecekan IRS:");
             mahasiswa.cekIRS();
         }
     }
-    private void ringkasanMataKuliah(){
+    private void ringkasanMataKuliah() {
         System.out.print("Masukkan nama mata kuliah yang akan ditunjukkan ringkasannya : ");
         String namaMataKuliah = input.nextLine();
         MataKuliah mataKuliah = getMataKuliah(namaMataKuliah);
@@ -133,12 +138,13 @@ public class SistemAkademik {
             int counterMahasiswa = 1;
             Mahasiswa[] daftarMahasiswa = mataKuliah.getDaftarMahasiswa();
             for (int i = 0; i < jumlahMahasiswa; i++) {
-                System.out.println(counterMahasiswa + ". " + daftarMahasiswa[i]);
-                counterMahasiswa++;
+                if (daftarMahasiswa[i] != null) {
+                    System.out.println(counterMahasiswa + ". " + daftarMahasiswa[i]);
+                    counterMahasiswa++;
+                }
             }
         }
     }
-
     private void daftarMenu(){
         int pilihan = 0;
         boolean exit = false;
