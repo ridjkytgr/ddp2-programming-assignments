@@ -39,6 +39,10 @@ public class Mahasiswa {
         return npm;
     }
 
+    /**
+     * Method untuk menghitung dan mengembalikan banyak mataKuliah yang telah diambil oleh mahasiswa.
+     * @return integer banyaknya mataKuliah yang telah diambil.
+     */
     public int getNumOfMataKuliah() {
         numOfMataKuliah = 0;
         for (int i = 0; i < 10; i++) {
@@ -56,6 +60,7 @@ public class Mahasiswa {
      */
     public boolean validateAddMatkul(MataKuliah mataKuliah) {
         for (int i = 0; i < 10; i++) {
+            // Pengecekan apakah mataKuliah telah diambil sebelumnya dan memastikan mataKuliah tersebut belum penuh.
             if (daftarMataKuliah[i] != null && daftarMataKuliah[i].equals(mataKuliah)) {
                 System.out.println("[DITOLAK] " + daftarMataKuliah[i] + " telah diambil sebelumnya");
                 return false;
@@ -100,6 +105,7 @@ public class Mahasiswa {
     }
 
     public void dropMatkul(MataKuliah mataKuliah){
+        // Membuat array baru yang berisi mataKuliah setelah di-drop.
         MataKuliah[] temp = new MataKuliah[10];
         int counter = 0;
         for (int i = 0; i < 10; i++) {
@@ -113,18 +119,25 @@ public class Mahasiswa {
         daftarMataKuliah = temp;
     }
 
-    public void cekIRS(){
-        int numOfMasalahIRS = 0;
-        // flagKode dan statusSKS untuk memastikan IRS mahasiswa tidak bermasalah (agar bisa dicetak string-nya)
-        boolean flagKode = true;
-        boolean statusSKS = true;
+    /**
+     * Method untuk mengubah nama jurusan menjadi bentuk singkatannya.
+     * @return String yang berisi singkatan dari jurusan mahasiswa tersebut.
+     */
+    public String getEncodeJurusan() {
         String singkatan;
-        // Melakukan encoding jurusan menjadi bentuk singkatan.
         if (jurusan.equals("Ilmu Komputer")) {
             singkatan = "IK";
         } else {
             singkatan = "SI";
         }
+        return singkatan;
+    }
+
+    public void cekIRS(){
+        int numOfMasalahIRS = 0;
+        // flagKode dan statusSKS untuk memastikan IRS mahasiswa tidak bermasalah (agar bisa dicetak string-nya)
+        boolean flagKode = true;
+        boolean statusSKS = true;
 
         if (totalSKS > 24) {
             statusSKS = false;
@@ -134,10 +147,10 @@ public class Mahasiswa {
 
         // Melakukan pengecekan jurusan mahasiswa dengan kode mataKuliah
         for (int i = 0; i < 10; i++) {
-            if (daftarMataKuliah[i] != null && !daftarMataKuliah[i].getKode().equals(singkatan)) {
+            if (daftarMataKuliah[i] != null && !daftarMataKuliah[i].getKode().equals(getEncodeJurusan())) {
                 if (!daftarMataKuliah[i].getKode().equals("CS")) {
                     flagKode = false;
-                    masalahIRS[numOfMasalahIRS] = "Mata Kuliah " + daftarMataKuliah[i] + " tidak dapat diambil jurusan " + singkatan;
+                    masalahIRS[numOfMasalahIRS] = "Mata Kuliah " + daftarMataKuliah[i] + " tidak dapat diambil jurusan " + getEncodeJurusan();
                     numOfMasalahIRS++;
                 }
             }
