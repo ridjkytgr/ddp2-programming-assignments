@@ -34,11 +34,12 @@ public class MataKuliah {
 
     public void addMahasiswa(Mahasiswa mahasiswa) {
         for (int i = 0; i < daftarMahasiswa.length; i++) {
-         this.daftarMahasiswa[i] = mahasiswa;
-         break;
+            if (daftarMahasiswa[i] == null) {
+                this.daftarMahasiswa[i] = mahasiswa;
+                break;
+            }
         }
     }
-
     public int calcJumlahMahasiswa() {
         int jumlahMahasiswa = 0;
         for (int i = 0; i < daftarMahasiswa.length; i++) {
@@ -52,13 +53,16 @@ public class MataKuliah {
     public void dropMahasiswa(Mahasiswa mahasiswa) {
         // Membuat array baru yang berisi daftar mahasiswa yang telah di-drop
         Mahasiswa[] daftarMahasiswaDrop = new Mahasiswa[kapasitas];
+        int counter = 0;
         for (int i = 0; i < daftarMahasiswa.length; i++) {
-            if (daftarMahasiswa[i] != mahasiswa) {
-                daftarMahasiswaDrop[i] = mahasiswa;
-            } else {
-                continue;
+            if (daftarMahasiswa[i] != null && !daftarMahasiswa[i].equals(mahasiswa)) {
+                daftarMahasiswaDrop[counter] = daftarMahasiswa[i];
+                counter++;
+            } else if (daftarMahasiswa[i] == null) {
+                break;
             }
         }
+        daftarMahasiswa = daftarMahasiswaDrop;
     }
 
     public String toString() {
