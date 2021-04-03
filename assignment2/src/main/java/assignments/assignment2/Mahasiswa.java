@@ -59,18 +59,18 @@ public class Mahasiswa {
             if (daftarMataKuliah[i] != null && daftarMataKuliah[i].equals(mataKuliah)) {
                 System.out.println("[DITOLAK] " + daftarMataKuliah[i] + " telah diambil sebelumnya");
                 return false;
-            } else if (daftarMataKuliah[i] != null && daftarMataKuliah[i].getKapasitas() == daftarMataKuliah[i].calcJumlahMahasiswa()) {
-                System.out.println("[DITOLAK] " + daftarMataKuliah[i] + " telah penuh kapasitasnya");
+            } else if (mataKuliah.getKapasitas() == mataKuliah.calcJumlahMahasiswa()) {
+                System.out.println("[DITOLAK] " + mataKuliah + " telah penuh kapasitasnya");
                 return false;
-            } else if (numOfMataKuliah == 10) {
-                System.out.println("[DITOLAK] Maksimal mata kuliah yang diambil hanya 10");
-                return false;
-            } else {
-                return true;
             }
         }
-        return false;
-    }
+            if (numOfMataKuliah < 10) {
+                return true;
+            } else {
+                System.out.println("[DITOLAK] Maksimal mata kuliah yang diambil hanya 10.");
+                return false;
+            }
+        }
 
     public void addMatkul(MataKuliah mataKuliah) {
         for (int i = 0; i < 10; i++) {
@@ -83,6 +83,11 @@ public class Mahasiswa {
         }
     }
 
+    /**
+     * Method untuk melakukan validasi sebelum mengurangi mata kuliah dari dalam array sesuai dengan prioritas validasi.
+     * @param mataKuliah object dengan class MataKuliah yang akan divalidasi.
+     * @return boolean yang bernilai true jika lolos validasi dan false jika sebaliknya.
+     */
     public boolean validateDropMatkul (MataKuliah mataKuliah) {
         // Membuat variabel boolean sebagai penanda jika telah menemukan mataKuliah yang sama.
         boolean foundFlag = false;
@@ -137,7 +142,6 @@ public class Mahasiswa {
                 }
             }
         }
-        System.out.println("SKS mahasiswa saat ini adalah sebanyak: " + totalSKS);
 
         // Melakukan pengecekan IRS secara keseluruhan
         if (flagKode && statusSKS) {
