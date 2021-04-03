@@ -40,6 +40,11 @@ public class MataKuliah {
             }
         }
     }
+
+    /**
+     * Method untuk menghitung dan mengembalikan banyaknya mahasiswa yang telah mengambil mataKuliah tersebut.
+     * @return integer banyaknya mahasiswa yang telah mengambil mataKuliah tersebut.
+     */
     public int calcJumlahMahasiswa() {
         int jumlahMahasiswa = 0;
         for (int i = 0; i < daftarMahasiswa.length; i++) {
