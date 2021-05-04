@@ -1,0 +1,40 @@
+ALVIN berhasil ditambahkan
+LIKA berhasil ditambahkan
+RYAAS berhasil ditambahkan
+BUDI berhasil ditambahkan
+KEVIN berhasil ditambahkan
+KEVIN telah mendaftarkan makanan SATE dengan harga 20000
+ALVIN menyapa dengan LIKA
+[DITOLAK] LIKA telah menyapa ALVIN hari ini
+LIKA menyapa dengan RYAAS
+[DITOLAK] Objek yang sama tidak bisa saling menyapa
+LIKA berhasil membeli SATE seharga 20000
+[DITOLAK] KEVIN tidak menjual CIMOL
+Hari telah berakhir dan nilai friendship telah diupdate
+1. LIKA(11)
+2. ALVIN(0)
+3. BUDI(0)
+4. KEVIN(0)
+5. RYAAS(0)
+KEVIN menyapa dengan RYAAS
+[DITOLAK] Objek yang sama tidak bisa saling menyapa
+ALVIN menyapa dengan LIKA
+ALVIN menyapa dengan RYAAS
+[DITOLAK] Hanya elemen kantin yang dapat menjual makanan
+[DITOLAK] Elemen kantin tidak bisa membeli makanan sendiri
+Hari telah berakhir dan nilai friendship telah diupdate
+1. ALVIN(10)
+2. RYAAS(10)
+3. LIKA(6)
+4. BUDI(0)
+5. KEVIN(0)
+LIKA menyapa dengan BUDI
+BUDI menyapa dengan ALVIN
+KEVIN menyapa dengan BUDI
+BUDI menyapa dengan RYAAS
+Program telah berakhir. Berikut nilai terakhir dari friendship pada Fasilkom :
+1. ALVIN(10)
+2. RYAAS(10)
+3. LIKA(6)
+4. BUDI(0)
+5. KEVIN(0)

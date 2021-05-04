@@ -1,0 +1,39 @@
+ALVIN berhasil ditambahkan
+LIKA berhasil ditambahkan
+RYAAS berhasil ditambahkan
+BUDI berhasil ditambahkan
+SUSI berhasil ditambahkan
+DDP berhasil ditambahkan dengan kapasitas 2
+BUDI mengajar mata kuliah DDP
+MATDAS berhasil ditambahkan dengan kapasitas 3
+[DITOLAK] BUDI sudah mengajar mata kuliah DDP
+BUDI berhenti mengajar DDP
+SUSI sedang tidak mengajar mata kuliah apapun
+SUSI mengajar mata kuliah DDP
+SUSI berhenti mengajar DDP
+[DITOLAK] Hanya mahasiswa yang dapat menambahkan matkul
+[DITOLAK] Hanya mahasiswa yang dapat drop matkul
+[DITOLAK] BUDI bukan merupakan seorang mahasiswa
+Nama mata kuliah: DDP
+Jumlah mahasiswa: 0
+Kapasitas: 2
+Dosen pengajar: Belum ada
+Daftar mahasiswa yang mengambil mata kuliah ini:
+Belum ada mahasiswa yang mengambil mata kuliah ini
+BUDI menyapa dengan SUSI
+LIKA menyapa dengan BUDI
+RYAAS menyapa dengan ALVIN
+Hari telah berakhir dan nilai friendship telah diupdate
+1. BUDI(10)
+2. ALVIN(0)
+3. LIKA(0)
+4. RYAAS(0)
+5. SUSI(0)
+RYAAS menyapa dengan SUSI
+RYAAS menyapa dengan BUDI
+Program telah berakhir. Berikut nilai terakhir dari friendship pada Fasilkom :
+1. BUDI(10)
+2. ALVIN(0)
+3. LIKA(0)
+4. RYAAS(0)
+5. SUSI(0)

@@ -1,0 +1,134 @@
+ALVIN berhasil ditambahkan
+LIKA berhasil ditambahkan
+RYAAS berhasil ditambahkan
+BUDI berhasil ditambahkan
+NANA berhasil ditambahkan
+DDP berhasil ditambahkan dengan kapasitas 2
+MATDAS berhasil ditambahkan dengan kapasitas 3
+KEVIN berhasil ditambahkan
+SUSI berhasil ditambahkan
+KEVIN telah mendaftarkan makanan SATE dengan harga 20000
+SUSI telah mendaftarkan makanan ROTI dengan harga 5000
+BUDI mengajar mata kuliah DDP
+NANA mengajar mata kuliah MATDAS
+LIKA berhasil menambahkan mata kuliah DDP
+RYAAS berhasil menambahkan mata kuliah MATDAS
+LIKA menyapa dengan BUDI
+RYAAS menyapa dengan NANA
+ALVIN menyapa dengan BUDI
+Hari telah berakhir dan nilai friendship telah diupdate
+1. ALVIN(0)
+2. BUDI(0)
+3. KEVIN(0)
+4. LIKA(0)
+5. NANA(0)
+6. RYAAS(0)
+7. SUSI(0)
+BUDI berhenti mengajar DDP
+NANA berhenti mengajar MATDAS
+LIKA menyapa dengan BUDI
+RYAAS menyapa dengan NANA
+ALVIN menyapa dengan NANA
+Hari telah berakhir dan nilai friendship telah diupdate
+1. ALVIN(0)
+2. BUDI(0)
+3. KEVIN(0)
+4. LIKA(0)
+5. NANA(0)
+6. RYAAS(0)
+7. SUSI(0)
+BUDI mengajar mata kuliah MATDAS
+NANA mengajar mata kuliah DDP
+Nama mata kuliah: MATDAS
+Jumlah mahasiswa: 1
+Kapasitas: 3
+Dosen pengajar: BUDI
+Daftar mahasiswa yang mengambil mata kuliah ini:
+1. RYAAS
+Nama mata kuliah: DDP
+Jumlah mahasiswa: 1
+Kapasitas: 2
+Dosen pengajar: NANA
+Daftar mahasiswa yang mengambil mata kuliah ini:
+1. LIKA
+Nama: LIKA
+Tanggal lahir: 1-10-2000
+Jurusan: Ilmu Komputer
+Daftar Mata Kuliah:
+1. DDP
+Nama: ALVIN
+Tanggal lahir: 1-10-2000
+Jurusan: Sistem Informasi
+Daftar Mata Kuliah:
+Belum ada mata kuliah yang diambil
+Nama: RYAAS
+Tanggal lahir: 28-8-2000
+Jurusan: Ilmu Komputer
+Daftar Mata Kuliah:
+1. MATDAS
+LIKA menyapa dengan BUDI
+RYAAS menyapa dengan NANA
+ALVIN menyapa dengan BUDI
+Hari telah berakhir dan nilai friendship telah diupdate
+1. ALVIN(0)
+2. BUDI(0)
+3. KEVIN(0)
+4. LIKA(0)
+5. NANA(0)
+6. RYAAS(0)
+7. SUSI(0)
+ALVIN berhasil menambahkan mata kuliah DDP
+ALVIN berhasil menambahkan mata kuliah MATDAS
+ALVIN menyapa dengan BUDI
+ALVIN menyapa dengan NANA
+Hari telah berakhir dan nilai friendship telah diupdate
+1. ALVIN(0)
+2. BUDI(0)
+3. KEVIN(0)
+4. LIKA(0)
+5. NANA(0)
+6. RYAAS(0)
+7. SUSI(0)
+Nama mata kuliah: DDP
+Jumlah mahasiswa: 2
+Kapasitas: 2
+Dosen pengajar: NANA
+Daftar mahasiswa yang mengambil mata kuliah ini:
+1. LIKA
+2. ALVIN
+Nama mata kuliah: MATDAS
+Jumlah mahasiswa: 2
+Kapasitas: 3
+Dosen pengajar: BUDI
+Daftar mahasiswa yang mengambil mata kuliah ini:
+1. RYAAS
+2. ALVIN
+ALVIN menyapa dengan RYAAS
+RYAAS menyapa dengan KEVIN
+BUDI menyapa dengan SUSI
+[DITOLAK] SUSI tidak menjual SATE
+SUSI berhasil membeli SATE seharga 20000
+KEVIN telah mendaftarkan makanan SOTO dengan harga 15000
+SUSI telah mendaftarkan makanan BAKSO dengan harga 10000
+LIKA berhasil membeli SATE seharga 20000
+LIKA menyapa dengan KEVIN
+[DITOLAK] KEVIN telah menyapa LIKA hari ini
+BUDI berhasil membeli SOTO seharga 15000
+LIKA menyapa dengan BUDI
+BUDI menyapa dengan KEVIN
+Hari telah berakhir dan nilai friendship telah diupdate
+1. KEVIN(13)
+2. BUDI(11)
+3. ALVIN(0)
+4. LIKA(0)
+5. NANA(0)
+6. RYAAS(0)
+7. SUSI(0)
+Program telah berakhir. Berikut nilai terakhir dari friendship pada Fasilkom :
+1. KEVIN(13)
+2. BUDI(11)
+3. ALVIN(0)
+4. LIKA(0)
+5. NANA(0)
+6. RYAAS(0)
+7. SUSI(0)

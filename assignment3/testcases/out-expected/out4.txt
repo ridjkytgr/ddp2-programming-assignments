@@ -1,0 +1,67 @@
+ALVIN berhasil ditambahkan
+LIKA berhasil ditambahkan
+RYAAS berhasil ditambahkan
+BUDI berhasil ditambahkan
+DDP berhasil ditambahkan dengan kapasitas 2
+[DITOLAK] Hanya dosen yang dapat berhenti mengajar
+KEVIN berhasil ditambahkan
+[DITOLAK] ALVIN bukan merupakan elemen kantin
+[DITOLAK] Hanya dosen yang dapat mengajar matkul
+Nama: RYAAS
+Tanggal lahir: 28-8-2000
+Jurusan: Ilmu Komputer
+Daftar Mata Kuliah:
+Belum ada mata kuliah yang diambil
+RYAAS menyapa dengan BUDI
+RYAAS berhasil menambahkan mata kuliah DDP
+[DITOLAK] DDP belum pernah diambil
+[DITOLAK] DDP telah diambil sebelumnya
+LIKA menyapa dengan KEVIN
+ALVIN menyapa dengan RYAAS
+[DITOLAK] RYAAS telah menyapa BUDI hari ini
+Hari telah berakhir dan nilai friendship telah diupdate
+1. RYAAS(10)
+2. ALVIN(0)
+3. BUDI(0)
+4. KEVIN(0)
+5. LIKA(0)
+RYAAS menyapa dengan BUDI
+Nama: LIKA
+Tanggal lahir: 1-10-2000
+Jurusan: Ilmu Komputer
+Daftar Mata Kuliah:
+Belum ada mata kuliah yang diambil
+LIKA berhasil menambahkan mata kuliah DDP
+LIKA menyapa dengan BUDI
+[DITOLAK] DDP telah penuh kapasitasnya.
+[DITOLAK] Hanya mahasiswa yang dapat menambahkan matkul
+[DITOLAK] DDP belum pernah diambil
+LIKA berhasil drop mata kuliah DDP
+ALVIN menyapa dengan BUDI
+Hari telah berakhir dan nilai friendship telah diupdate
+1. BUDI(10)
+2. RYAAS(5)
+3. ALVIN(0)
+4. KEVIN(0)
+5. LIKA(0)
+ALVIN menyapa dengan BUDI
+ALVIN menyapa dengan LIKA
+ALVIN menyapa dengan RYAAS
+ALVIN menyapa dengan KEVIN
+LIKA menyapa dengan BUDI
+LIKA menyapa dengan RYAAS
+LIKA menyapa dengan KEVIN
+RYAAS menyapa dengan BUDI
+RYAAS menyapa dengan KEVIN
+Hari telah berakhir dan nilai friendship telah diupdate
+1. BUDI(20)
+2. RYAAS(15)
+3. ALVIN(10)
+4. KEVIN(10)
+5. LIKA(10)
+Program telah berakhir. Berikut nilai terakhir dari friendship pada Fasilkom :
+1. BUDI(20)
+2. RYAAS(15)
+3. ALVIN(10)
+4. KEVIN(10)
+5. LIKA(10)

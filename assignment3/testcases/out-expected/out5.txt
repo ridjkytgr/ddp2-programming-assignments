@@ -1,0 +1,87 @@
+ALVIN berhasil ditambahkan
+LIKA berhasil ditambahkan
+RYAAS berhasil ditambahkan
+BUDI berhasil ditambahkan
+SUSI berhasil ditambahkan
+DDP berhasil ditambahkan dengan kapasitas 2
+MATDAS berhasil ditambahkan dengan kapasitas 3
+KEVIN berhasil ditambahkan
+NANA berhasil ditambahkan
+KEVIN telah mendaftarkan makanan SATE dengan harga 20000
+NANA telah mendaftarkan makanan SATE dengan harga 15000
+[DITOLAK] LIKA bukan merupakan elemen kantin
+[DITOLAK] Hanya mahasiswa yang dapat menambahkan matkul
+[DITOLAK] Hanya mahasiswa yang dapat drop matkul
+[DITOLAK] Hanya dosen yang dapat mengajar matkul
+[DITOLAK] Hanya dosen yang dapat berhenti mengajar
+[DITOLAK] KEVIN bukan merupakan seorang mahasiswa
+Nama mata kuliah: DDP
+Jumlah mahasiswa: 0
+Kapasitas: 2
+Dosen pengajar: Belum ada
+Daftar mahasiswa yang mengambil mata kuliah ini:
+Belum ada mahasiswa yang mengambil mata kuliah ini
+Hari telah berakhir dan nilai friendship telah diupdate
+1. ALVIN(0)
+2. BUDI(0)
+3. KEVIN(0)
+4. LIKA(0)
+5. NANA(0)
+6. RYAAS(0)
+7. SUSI(0)
+LIKA berhasil membeli SATE seharga 20000
+LIKA berhasil membeli SATE seharga 15000
+LIKA menyapa dengan NANA
+LIKA menyapa dengan KEVIN
+ALVIN menyapa dengan KEVIN
+ALVIN menyapa dengan NANA
+RYAAS menyapa dengan KEVIN
+RYAAS menyapa dengan NANA
+Hari telah berakhir dan nilai friendship telah diupdate
+1. KEVIN(11)
+2. NANA(11)
+3. ALVIN(0)
+4. BUDI(0)
+5. LIKA(0)
+6. RYAAS(0)
+7. SUSI(0)
+BUDI mengajar mata kuliah DDP
+LIKA menyapa dengan BUDI
+ALVIN menyapa dengan BUDI
+RYAAS menyapa dengan BUDI
+Hari telah berakhir dan nilai friendship telah diupdate
+1. BUDI(10)
+2. KEVIN(6)
+3. NANA(6)
+4. ALVIN(0)
+5. LIKA(0)
+6. RYAAS(0)
+7. SUSI(0)
+LIKA berhasil membeli SATE seharga 20000
+Hari telah berakhir dan nilai friendship telah diupdate
+1. BUDI(5)
+2. KEVIN(2)
+3. NANA(1)
+4. ALVIN(0)
+5. LIKA(0)
+6. RYAAS(0)
+7. SUSI(0)
+LIKA menyapa dengan KEVIN
+ALVIN menyapa dengan KEVIN
+RYAAS menyapa dengan KEVIN
+Hari telah berakhir dan nilai friendship telah diupdate
+1. KEVIN(12)
+2. ALVIN(0)
+3. BUDI(0)
+4. LIKA(0)
+5. NANA(0)
+6. RYAAS(0)
+7. SUSI(0)
+Program telah berakhir. Berikut nilai terakhir dari friendship pada Fasilkom :
+1. KEVIN(12)
+2. ALVIN(0)
+3. BUDI(0)
+4. LIKA(0)
+5. NANA(0)
+6. RYAAS(0)
+7. SUSI(0)
