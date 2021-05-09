@@ -1,19 +1,30 @@
 package assignments.assignment3;
 
 class MataKuliah {
-
-    /* TODO: Silahkan menambahkan visibility pada setiap method dan variabel apabila diperlukan */
-
-    String nama;
+    private String nama;
     
-    int kapasitas;
+    private int kapasitas;
 
-    Dosen dosen;
+    private Dosen dosen;
 
-    Mahasiswa[] daftarMahasiswa;
+    private Mahasiswa[] daftarMahasiswa;
 
     MataKuliah(String nama, int kapasitas) {
         /* TODO: implementasikan kode Anda di sini */
+        this.nama = nama;
+        this.kapasitas = kapasitas;
+    }
+
+    public Dosen getDosen() {
+        return this.dosen;
+    }
+
+    public boolean dosenIsExist() {
+        if (this.dosen != null) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     void addMahasiswa(Mahasiswa mahasiswa) {
@@ -25,15 +36,15 @@ class MataKuliah {
     }
 
     void addDosen(Dosen dosen) {
-        /* TODO: implementasikan kode Anda di sini */
+        this.dosen = dosen;
     }
 
     void dropDosen() {
-        /* TODO: implementasikan kode Anda di sini */
+        this.dosen = null;
     }
 
-    String toString() {
+    public String toString() {
         /* TODO: implementasikan kode Anda di sini */
-        return "";
+        return this.nama;
     }
 }
