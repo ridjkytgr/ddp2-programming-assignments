@@ -4,28 +4,67 @@ abstract class ElemenFasilkom {
     
     /* TODO: Silahkan menambahkan visibility pada setiap method dan variabel apabila diperlukan */
 
-    String tipe;
+    private String tipe;
     
-    String nama;
+    private String nama;
 
-    int friendship;
+    private int friendship;
 
-    ElemenFasilkom[] telahMenyapa = new ElemenFasilkom[100];
+    private ElemenFasilkom[] telahMenyapa = new ElemenFasilkom[100];
 
-    void menyapa(ElemenFasilkom elemenFasilkom) {
-        /* TODO: implementasikan kode Anda di sini */
+    private int numOfTelahMenyapa;
+
+    public ElemenFasilkom(String tipe, String nama) {
+        this.tipe = tipe;
+        this.nama = nama;
     }
 
-    void resetMenyapa() {
-        /* TODO: implementasikan kode Anda di sini */
+    public String getNama() {
+        return this.nama;
     }
 
-    void membeliMakanan(ElemenFasilkom pembeli, ElemenFasilkom penjual, String namaMakanan) {
-        /* TODO: implementasikan kode Anda di sini */
+    public boolean validateMenyapa(ElemenFasilkom elemenFasilkom) {
+        for (int i = 0; i < numOfTelahMenyapa; i++) {
+            if (telahMenyapa[i] != null && telahMenyapa[i].equals(elemenFasilkom)) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    String toString() {
+    public void menyapa(ElemenFasilkom elemenFasilkom) {
         /* TODO: implementasikan kode Anda di sini */
-        return "";
+        if (this.validateMenyapa(elemenFasilkom)) {
+            telahMenyapa[numOfTelahMenyapa] = elemenFasilkom;
+            numOfTelahMenyapa++;
+            System.out.printf("%s menyapa dengan %s", this, elemenFasilkom);
+        } else {
+            System.out.printf("[DITOLAK] %s telah menyapa %s hari ini", this, elemenFasilkom);
+        }
+    }
+
+    public void resetMenyapa() {
+        /* TODO: implementasikan kode Anda di sini */
+        for (int i = 0; i < numOfTelahMenyapa; i++) {
+            telahMenyapa[i] = null;
+            numOfTelahMenyapa = 0;
+        }
+    }
+
+    public void membeliMakanan(ElemenFasilkom pembeli, ElemenFasilkom penjual, String namaMakanan) {
+        /* TODO: implementasikan kode Anda di sini */
+
+        // Memeriksa apakah nama makanan ada di daftarMakanan
+        if (((ElemenKantin) penjual).cekKetersediaanMakanan(namaMakanan)) {
+            Makanan makanan = ((ElemenKantin) penjual).getMakanan(namaMakanan);
+            System.out.printf("%s berhasil membeli %s seharga %d", pembeli, namaMakanan, makanan.getHarga());
+        } else {
+            System.out.printf("[DITOLAK] %s tidak menjual %s", penjual, namaMakanan);
+        }
+    }
+
+    public String toString() {
+        /* TODO: implementasikan kode Anda di sini */
+        return this.nama;
     }
 }
