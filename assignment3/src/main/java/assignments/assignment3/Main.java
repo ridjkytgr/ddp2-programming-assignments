@@ -14,67 +14,67 @@ public class Main {
 
     int totalElemenFasilkom = 0; 
 
-    void addMahasiswa(String nama, long npm) {
+    private static void addMahasiswa(String nama, long npm) {
         /* TODO: implementasikan kode Anda di sini */
     }
 
-    void addDosen(String nama) {
+    private static void addDosen(String nama) {
         /* TODO: implementasikan kode Anda di sini */
     }
 
-    void addElemenKantin(String nama) {
+    private static void addElemenKantin(String nama) {
         /* TODO: implementasikan kode Anda di sini */
     }
 
-    void menyapa(String objek1, String objek2) {
+    private static void menyapa(String objek1, String objek2) {
         /* TODO: implementasikan kode Anda di sini */
     }
 
-    void addMakanan(String objek, String namaMakanan, long harga) {
+    private static void addMakanan(String objek, String namaMakanan, long harga) {
         /* TODO: implementasikan kode Anda di sini */
     }
 
-    void membeliMakanan(String objek1, String objek2, String namaMakanan) {
+    private static void membeliMakanan(String objek1, String objek2, String namaMakanan) {
         /* TODO: implementasikan kode Anda di sini */
     }
 
-    void createMatkul(String nama, int kapasitas) {
+    private static void createMatkul(String nama, int kapasitas) {
         /* TODO: implementasikan kode Anda di sini */
     }
 
-    void addMatkul(String objek, String namaMataKuliah) {
+    private static void addMatkul(String objek, String namaMataKuliah) {
         /* TODO: implementasikan kode Anda di sini */
     }
 
-    void dropMatkul(String objek, String namaMataKuliah) {
+    private static void dropMatkul(String objek, String namaMataKuliah) {
         /* TODO: implementasikan kode Anda di sini */
     }
 
-    void mengajarMatkul(String objek, String namaMataKuliah) {
+    private static void mengajarMatkul(String objek, String namaMataKuliah) {
         /* TODO: implementasikan kode Anda di sini */
     }
 
-    void berhentiMengajar(String objek) {
+    private static void berhentiMengajar(String objek) {
         /* TODO: implementasikan kode Anda di sini */
     }
 
-    void ringkasanMahasiswa(String objek) {
+    private static void ringkasanMahasiswa(String objek) {
         /* TODO: implementasikan kode Anda di sini */
     }
 
-    void ringkasanMataKuliah(String namaMataKuliah) {
+    private static void ringkasanMataKuliah(String namaMataKuliah) {
         /* TODO: implementasikan kode Anda di sini */
     }
 
-    void nextDay() {
+    private static void nextDay() {
         /* TODO: implementasikan kode Anda di sini */
     }
 
-    void friendshipRanking() {
+    private static void friendshipRanking() {
         /* TODO: implementasikan kode Anda di sini */
     }
 
-    void programEnd() {
+    private static void programEnd() {
         /* TODO: implementasikan kode Anda di sini */
     }
 
