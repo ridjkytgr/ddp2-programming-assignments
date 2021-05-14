@@ -41,6 +41,8 @@ class Mahasiswa extends ElemenFasilkom {
     public void addMatkul(MataKuliah mataKuliah) {
         if (validateAddMatkul(mataKuliah)) {
             daftarMataKuliah[numOfMataKuliah++] = mataKuliah;
+            // Menambahkan mahasiswa tersebut ke dalam array daftarMahasiswa
+            mataKuliah.addMahasiswa(this);
             System.out.printf("%s telah berhasil menambahkan mata kuliah %s", this.getNama(), mataKuliah);
         }
     }
@@ -72,8 +74,11 @@ class Mahasiswa extends ElemenFasilkom {
             }
             // Memindahkan reference ke array baru
             daftarMataKuliah = temp;
+            // Menghapus mahasiswa tersebut dari array daftarMahasiswa
+            mataKuliah.dropMahasiswa(this);
+            System.out.printf("%s berhasil drop mata kuliah %s\n", this.getNama(), mataKuliah);
         }
-        System.out.printf("%s berhasil drop mata kuliah %s\n", this.getNama(), mataKuliah);
+
     }
 
     public String extractTanggalLahir(long npm) {
