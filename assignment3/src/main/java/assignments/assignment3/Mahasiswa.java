@@ -4,33 +4,45 @@ class Mahasiswa extends ElemenFasilkom {
     
     /* TODO: Silahkan menambahkan visibility pada setiap method dan variabel apabila diperlukan */
 
-    MataKuliah[] daftarMataKuliah = new MataKuliah[10];
-    
-    long npm;
+    private MataKuliah[] daftarMataKuliah = new MataKuliah[10];
 
-    String tanggalLahir;
+    private int numOfMataKuliah;
+
+    private long npm;
+
+    private String tanggalLahir;
     
-    String jurusan;
+    private String jurusan;
 
     Mahasiswa(String nama, long npm) {
         /* TODO: implementasikan kode Anda di sini */
+        super("Mahasiswa", nama);
+        this.npm = npm;
     }
 
-    void addMatkul(MataKuliah mataKuliah) {
+    public boolean validateAddMatkul() {
+        return true;
+    }
+
+    public void addMatkul(MataKuliah mataKuliah) {
+        daftarMataKuliah[numOfMataKuliah++] = mataKuliah;
+
+    }
+
+    public void dropMatkul(MataKuliah mataKuliah) {
         /* TODO: implementasikan kode Anda di sini */
     }
 
-    void dropMatkul(MataKuliah mataKuliah) {
-        /* TODO: implementasikan kode Anda di sini */
+    public String extractTanggalLahir(long npm) {
+        String npmString = Long.toString(npm);
+        return String.format("%s-%s-%s", npmString.substring(4, 6), npmString.substring(6, 8), npmString.substring(8, 12));
     }
 
-    String extractTanggalLahir(long npm) {
-        /* TODO: implementasikan kode Anda di sini */
-        return "";
-    }
-
-    String extractJurusan(long npm) {
-        /* TODO: implementasikan kode Anda di sini */
-        return "";
+    public String extractJurusan(long npm) {
+        String npmString = Long.toString(npm);
+        if (npmString.substring(2, 4) == "01") {
+            return "Ilmu Komputer";
+        }
+        return "Sistem Informasi";
     }
 }
