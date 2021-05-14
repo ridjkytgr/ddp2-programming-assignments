@@ -1,33 +1,29 @@
 package assignments.assignment3;
 
 class ElemenKantin extends ElemenFasilkom {
-    
-    /* TODO: Silahkan menambahkan visibility pada setiap method dan variabel apabila diperlukan */
-
     private Makanan[] daftarMakanan = new Makanan[10];
 
     private int jumlahMakanan;
 
     public ElemenKantin(String nama) {
-        /* TODO: implementasikan kode Anda di sini */
         super("ElemenKantin", nama);
     }
 
     public boolean validateMakanan (String nama) {
-        for (int i = 0; i < 10; i++) {
-            if (daftarMakanan[i] != null && daftarMakanan[i].equals(nama)) {
-                return true;
+        for (Makanan makanan : daftarMakanan) {
+            if (makanan != null && makanan.equals(nama)) {
+                System.out.printf("[DITOLAK] %s sudah pernah terdaftar\n", nama);
+                return false;
+            } else if (makanan == null) {
+                break;
             }
         }
-        return false;
+        // Jika makanan tersebut belum ada di daftar makanan
+        return true;
     }
 
     public void setMakanan(String nama, long harga) {
-        /* TODO: implementasikan kode Anda di sini */
         if (validateMakanan(nama)) {
-            System.out.printf("[DITOLAK] %s sudah pernah terdaftar", nama);
-        }
-        else {
             Makanan makanan = new Makanan(nama, harga);
             daftarMakanan[jumlahMakanan] = makanan;
             jumlahMakanan++;
@@ -36,9 +32,11 @@ class ElemenKantin extends ElemenFasilkom {
     }
 
     public Makanan getMakanan(String nama) {
-        for (int i = 0; i < 10; i++) {
-            if (daftarMakanan[i] != null && daftarMakanan[i].equals(nama)) {
-                return daftarMakanan[i];
+        for (Makanan makanan : daftarMakanan) {
+            if (makanan != null && makanan.equals(nama)) {
+                return makanan;
+            } else if (makanan == null) {
+                break;
             }
         }
         return null;
