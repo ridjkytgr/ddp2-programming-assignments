@@ -35,7 +35,9 @@ abstract class ElemenFasilkom {
     public void menyapa(ElemenFasilkom elemenFasilkom) {
         /* TODO: implementasikan kode Anda di sini */
         if (this.validateMenyapa(elemenFasilkom)) {
-            telahMenyapa[numOfTelahMenyapa++] = elemenFasilkom;
+            // Saling menambahkan satu sama lain pada array telahMenyapa
+            this.telahMenyapa[numOfTelahMenyapa++] = elemenFasilkom;
+            elemenFasilkom.telahMenyapa[elemenFasilkom.numOfTelahMenyapa++] = this;
             System.out.printf("%s menyapa dengan %s", this, elemenFasilkom);
         } else {
             System.out.printf("[DITOLAK] %s telah menyapa %s hari ini", this, elemenFasilkom);
