@@ -33,7 +33,7 @@ Daftar Mata Kuliah:
 Belum ada mata kuliah yang diambil
 LIKA berhasil menambahkan mata kuliah DDP
 LIKA menyapa dengan BUDI
-[DITOLAK] DDP telah penuh kapasitasnya.
+[DITOLAK] DDP telah penuh kapasitasnya
 [DITOLAK] Hanya mahasiswa yang dapat menambahkan matkul
 [DITOLAK] DDP belum pernah diambil
 LIKA berhasil drop mata kuliah DDP

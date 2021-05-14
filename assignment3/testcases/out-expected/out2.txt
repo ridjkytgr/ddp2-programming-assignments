@@ -8,7 +8,7 @@ BUDI mengajar mata kuliah DDP
 MATDAS berhasil ditambahkan dengan kapasitas 3
 [DITOLAK] BUDI sudah mengajar mata kuliah DDP
 BUDI berhenti mengajar DDP
-SUSI sedang tidak mengajar mata kuliah apapun
+[DITOLAK] SUSI sedang tidak mengajar mata kuliah apapun
 SUSI mengajar mata kuliah DDP
 SUSI berhenti mengajar DDP
 [DITOLAK] Hanya mahasiswa yang dapat menambahkan matkul
