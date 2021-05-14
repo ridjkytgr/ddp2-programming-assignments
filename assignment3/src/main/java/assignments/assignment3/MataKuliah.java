@@ -1,11 +1,13 @@
 package assignments.assignment3;
 
 class MataKuliah {
-    private String nama;
-    
     private int kapasitas;
 
+    public int jumlahMahasiswa;
+
     private Dosen dosen;
+
+    private String nama;
 
     private Mahasiswa[] daftarMahasiswa;
 
@@ -17,6 +19,14 @@ class MataKuliah {
 
     public Dosen getDosen() {
         return this.dosen;
+    }
+
+    public int getKapasitas() {
+        return this.kapasitas;
+    }
+
+    public int getJumlahMahasiswa() {
+        return this.jumlahMahasiswa;
     }
 
     public boolean dosenIsExist() {

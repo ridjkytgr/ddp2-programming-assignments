@@ -20,17 +20,60 @@ class Mahasiswa extends ElemenFasilkom {
         this.npm = npm;
     }
 
-    public boolean validateAddMatkul() {
+    public boolean validateAddMatkul(MataKuliah mataKuliah) {
+        for (MataKuliah matkul : daftarMataKuliah) {
+            if (matkul != null && matkul.equals(mataKuliah)) {
+                // Validasi pertama: Apakah matkul tersebut sudah pernah diambil sebelumnya
+                System.out.printf("[DITOLAK] %s telah diambil sebelumnya\n", mataKuliah);
+                return false;
+            } else if (matkul != null && mataKuliah.getKapasitas() == mataKuliah.getJumlahMahasiswa()) {
+                // Validasi kedua: Apakah matkul tersebut sudah penuh kapasitasnya
+                System.out.printf("[DITOLAK] %s telah penuh kapasitasnya\n", mataKuliah);
+                return false;
+            } else if (matkul == null) {
+                break;
+            }
+        }
+        // Jika mataKuliah tidak mengalami kendala apapun
         return true;
     }
 
     public void addMatkul(MataKuliah mataKuliah) {
-        daftarMataKuliah[numOfMataKuliah++] = mataKuliah;
+        if (validateAddMatkul(mataKuliah)) {
+            daftarMataKuliah[numOfMataKuliah++] = mataKuliah;
+            System.out.printf("%s telah berhasil menambahkan mata kuliah %s", this.getNama(), mataKuliah);
+        }
+    }
 
+    public boolean validateDropMatkul (MataKuliah mataKuliah) {
+        for (MataKuliah matkul : daftarMataKuliah) {
+            if (matkul != null && matkul.equals(mataKuliah)) {
+                return true;
+            } else if (matkul == null) {
+                break;
+            }
+        }
+        System.out.printf("[DITOLAK] %s belum pernah diambil\n", mataKuliah);
+        return false;
     }
 
     public void dropMatkul(MataKuliah mataKuliah) {
-        /* TODO: implementasikan kode Anda di sini */
+        if (validateDropMatkul(mataKuliah)) {
+            // Membuat array baru yang tidak berisi mataKuliah yang ingin di-drop
+            MataKuliah[] temp = new MataKuliah[10];
+            int counter = 0;
+            for (int i = 0; i < 10; i++) {
+                if (daftarMataKuliah[i] != null && !daftarMataKuliah[i].equals(mataKuliah)) {
+                    temp[counter] = daftarMataKuliah[i];
+                    counter++;
+                } else if (daftarMataKuliah[i] != null && daftarMataKuliah[i].equals(mataKuliah)){
+                    numOfMataKuliah--;
+                }
+            }
+            // Memindahkan reference ke array baru
+            daftarMataKuliah = temp;
+        }
+        System.out.printf("%s berhasil drop mata kuliah %s\n", this.getNama(), mataKuliah);
     }
 
     public String extractTanggalLahir(long npm) {
