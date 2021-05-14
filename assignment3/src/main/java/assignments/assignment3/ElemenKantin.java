@@ -43,8 +43,8 @@ class ElemenKantin extends ElemenFasilkom {
     }
 
     public boolean cekKetersediaanMakanan (String namaMakanan) {
-        for (int i = 0; i < 10; i++) {
-            if (daftarMakanan[i] != null && daftarMakanan[i].equals(namaMakanan)) {
+        for (Makanan makanan : daftarMakanan) {
+            if (makanan != null && makanan.equals(namaMakanan)) {
                 return true;
             }
         }
