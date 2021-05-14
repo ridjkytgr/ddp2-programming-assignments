@@ -62,11 +62,11 @@ class Mahasiswa extends ElemenFasilkom {
             // Membuat array baru yang tidak berisi mataKuliah yang ingin di-drop
             MataKuliah[] temp = new MataKuliah[10];
             int counter = 0;
-            for (int i = 0; i < 10; i++) {
-                if (daftarMataKuliah[i] != null && !daftarMataKuliah[i].equals(mataKuliah)) {
-                    temp[counter] = daftarMataKuliah[i];
+            for (MataKuliah matkul : daftarMataKuliah) {
+                if (matkul != null && !matkul.equals(mataKuliah)) {
+                    temp[counter] = matkul;
                     counter++;
-                } else if (daftarMataKuliah[i] != null && daftarMataKuliah[i].equals(mataKuliah)){
+                } else if (matkul != null && matkul.equals(mataKuliah)){
                     numOfMataKuliah--;
                 }
             }

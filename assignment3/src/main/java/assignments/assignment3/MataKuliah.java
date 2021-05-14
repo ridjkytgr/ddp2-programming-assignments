@@ -15,6 +15,7 @@ class MataKuliah {
         /* TODO: implementasikan kode Anda di sini */
         this.nama = nama;
         this.kapasitas = kapasitas;
+        this.daftarMahasiswa = new Mahasiswa[kapasitas];
     }
 
     public Dosen getDosen() {
@@ -38,11 +39,23 @@ class MataKuliah {
     }
 
     void addMahasiswa(Mahasiswa mahasiswa) {
-        /* TODO: implementasikan kode Anda di sini */
+        daftarMahasiswa[jumlahMahasiswa++] = mahasiswa;
     }
 
     void dropMahasiswa(Mahasiswa mahasiswa) {
-        /* TODO: implementasikan kode Anda di sini */
+        // Membuat array baru yang tidak berisi mahasiswa yang ingin di-drop
+        Mahasiswa[] temp = new Mahasiswa[kapasitas];
+        int counter = 0;
+        for (Mahasiswa mahasiswaArray : daftarMahasiswa) {
+            if (mahasiswaArray != null && mahasiswaArray.equals(mahasiswa)) {
+                temp[counter] = mahasiswaArray;
+                counter++;
+            } else if (mahasiswaArray != null && mahasiswaArray.equals(mahasiswa)){
+                jumlahMahasiswa--;
+            }
+        }
+        // Memindahkan reference ke array baru
+        daftarMahasiswa = temp;
     }
 
     void addDosen(Dosen dosen) {
