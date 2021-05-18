@@ -1,9 +1,6 @@
 package assignments.assignment3;
 
 class Mahasiswa extends ElemenFasilkom {
-    
-    /* TODO: Silahkan menambahkan visibility pada setiap method dan variabel apabila diperlukan */
-
     private MataKuliah[] daftarMataKuliah = new MataKuliah[10];
 
     private int numOfMataKuliah;
@@ -15,9 +12,16 @@ class Mahasiswa extends ElemenFasilkom {
     private String jurusan;
 
     Mahasiswa(String nama, long npm) {
-        /* TODO: implementasikan kode Anda di sini */
         super("Mahasiswa", nama);
         this.npm = npm;
+    }
+
+    public long getNpm() {
+        return this.npm;
+    }
+
+    public MataKuliah[] getDaftarMataKuliah() {
+        return daftarMataKuliah;
     }
 
     public boolean validateAddMatkul(MataKuliah mataKuliah) {
@@ -26,14 +30,15 @@ class Mahasiswa extends ElemenFasilkom {
                 // Validasi pertama: Apakah matkul tersebut sudah pernah diambil sebelumnya
                 System.out.printf("[DITOLAK] %s telah diambil sebelumnya\n", mataKuliah);
                 return false;
-            } else if (matkul != null && mataKuliah.getKapasitas() == mataKuliah.getJumlahMahasiswa()) {
-                // Validasi kedua: Apakah matkul tersebut sudah penuh kapasitasnya
-                System.out.printf("[DITOLAK] %s telah penuh kapasitasnya\n", mataKuliah);
-                return false;
             } else if (matkul == null) {
                 break;
             }
         }
+         if (mataKuliah.getJumlahMahasiswa() >= mataKuliah.getKapasitas()) {
+             // Validasi kedua: Apakah matkul tersebut sudah penuh kapasitasnya
+             System.out.printf("[DITOLAK] %s telah penuh kapasitasnya\n", mataKuliah);
+             return false;
+         }
         // Jika mataKuliah tidak mengalami kendala apapun
         return true;
     }
@@ -43,7 +48,7 @@ class Mahasiswa extends ElemenFasilkom {
             daftarMataKuliah[numOfMataKuliah++] = mataKuliah;
             // Menambahkan mahasiswa tersebut ke dalam array daftarMahasiswa
             mataKuliah.addMahasiswa(this);
-            System.out.printf("%s telah berhasil menambahkan mata kuliah %s", this.getNama(), mataKuliah);
+            System.out.printf("%s berhasil menambahkan mata kuliah %s\n", this.getNama(), mataKuliah);
         }
     }
 
@@ -70,6 +75,8 @@ class Mahasiswa extends ElemenFasilkom {
                     counter++;
                 } else if (matkul != null && matkul.equals(mataKuliah)){
                     numOfMataKuliah--;
+                } else if (matkul == null) {
+                    break;
                 }
             }
             // Memindahkan reference ke array baru
@@ -81,14 +88,26 @@ class Mahasiswa extends ElemenFasilkom {
 
     }
 
+    public MataKuliah searchMataKuliah(String nama) {
+        for (MataKuliah matkul : daftarMataKuliah) {
+            if (matkul != null && matkul.equals(nama)) {
+                return matkul;
+            } else if (matkul == null) {
+                break;
+            }
+        }
+        return null;
+    }
+
     public String extractTanggalLahir(long npm) {
         String npmString = Long.toString(npm);
-        return String.format("%s-%s-%s", npmString.substring(4, 6), npmString.substring(6, 8), npmString.substring(8, 12));
+        return String.format("%d-%d-%d", Integer.parseInt(npmString.substring(4, 6)),
+                Integer.parseInt(npmString.substring(6, 8)), Integer.parseInt(npmString.substring(8, 12)));
     }
 
     public String extractJurusan(long npm) {
         String npmString = Long.toString(npm);
-        if (npmString.substring(2, 4) == "01") {
+        if (npmString.substring(2, 4).equals("01")) {
             return "Ilmu Komputer";
         }
         return "Sistem Informasi";

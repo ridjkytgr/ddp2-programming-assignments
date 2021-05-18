@@ -9,9 +9,9 @@ class Dosen extends ElemenFasilkom {
 
     public void mengajarMataKuliah(MataKuliah mataKuliah) {
         if (this.mataKuliah != null) {
-            System.out.printf("[DITOLAK] %s sudah mengajar mata kuliah %s", this.getNama(), this.mataKuliah);
+            System.out.printf("[DITOLAK] %s sudah mengajar mata kuliah %s\n", this.getNama(), this.mataKuliah);
         } else if (this.mataKuliah == null) {
-            System.out.printf("%s mengajar mata kuliah %s", this.getNama(), mataKuliah);
+            System.out.printf("%s mengajar mata kuliah %s\n", this.getNama(), mataKuliah);
 
             // Jadikan mataKuliah sebagai mata kuliah yang diajar oleh dosen tersebut
             this.mataKuliah = mataKuliah;
@@ -19,18 +19,30 @@ class Dosen extends ElemenFasilkom {
             // Tambahkan dosen yang mengajar ke dalam MataKuliah
             mataKuliah.addDosen(this);
         } else if (mataKuliah.dosenIsExist()) {
-            System.out.printf("[DITOLAK] %s sudah memiliki dosen pengajar", mataKuliah);
+            System.out.printf("[DITOLAK] %s sudah memiliki dosen pengajar\n", mataKuliah);
         }
     }
 
     public void dropMataKuliah() {
         if (this.mataKuliah != null) {
-            System.out.printf("%s berhenti mengajar %s", this.getNama(), this.mataKuliah);
+            System.out.printf("%s berhenti mengajar %s\n", this.getNama(), this.mataKuliah);
 
             // Menghapus mataKuliah yang telah diajar oleh dosen
+            this.mataKuliah.dropDosen();
             this.mataKuliah = null;
         } else {
-            System.out.printf("[DITOLAK] %s sedang tidak mengajar mata kuliah apapun", this.getNama());
+            System.out.printf("[DITOLAK] %s sedang tidak mengajar mata kuliah apapun\n", this.getNama());
+        }
+    }
+
+    public void dosenMenyapaMahasiswa (Mahasiswa mahasiswa) {
+        if (mataKuliah != null) {
+            // Jika dosen mengajarkan matkul yang sama dengan yang dipelajari mahasiswa
+            if (mataKuliah.equals(mahasiswa.searchMataKuliah(mataKuliah.toString()))) {
+                // Menambahkan friendship dosen dan mahasiswa
+                this.updateFriendship(2);
+                mahasiswa.updateFriendship(2);
+            }
         }
     }
 }

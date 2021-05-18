@@ -12,7 +12,6 @@ class MataKuliah {
     private Mahasiswa[] daftarMahasiswa;
 
     MataKuliah(String nama, int kapasitas) {
-        /* TODO: implementasikan kode Anda di sini */
         this.nama = nama;
         this.kapasitas = kapasitas;
         this.daftarMahasiswa = new Mahasiswa[kapasitas];
@@ -28,6 +27,10 @@ class MataKuliah {
 
     public int getJumlahMahasiswa() {
         return this.jumlahMahasiswa;
+    }
+
+    public Mahasiswa[] getDaftarMahasiswa() {
+        return this.daftarMahasiswa;
     }
 
     public boolean dosenIsExist() {
@@ -47,11 +50,12 @@ class MataKuliah {
         Mahasiswa[] temp = new Mahasiswa[kapasitas];
         int counter = 0;
         for (Mahasiswa mahasiswaArray : daftarMahasiswa) {
-            if (mahasiswaArray != null && mahasiswaArray.equals(mahasiswa)) {
-                temp[counter] = mahasiswaArray;
-                counter++;
+            if (mahasiswaArray != null && !(mahasiswaArray.equals(mahasiswa))) {
+                temp[counter++] = mahasiswaArray;
             } else if (mahasiswaArray != null && mahasiswaArray.equals(mahasiswa)){
                 jumlahMahasiswa--;
+            } else if (mahasiswaArray == null) {
+                break;
             }
         }
         // Memindahkan reference ke array baru
@@ -67,7 +71,6 @@ class MataKuliah {
     }
 
     public String toString() {
-        /* TODO: implementasikan kode Anda di sini */
         return this.nama;
     }
 }
