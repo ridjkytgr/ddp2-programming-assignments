@@ -15,15 +15,17 @@ class Dosen extends ElemenFasilkom {
         if (this.mataKuliah != null) {
             System.out.printf("[DITOLAK] %s sudah mengajar mata kuliah %s\n", this, this.mataKuliah);
         } else if (this.mataKuliah == null) {
-            System.out.printf("%s mengajar mata kuliah %s\n", this, mataKuliah);
+            if (mataKuliah.dosenIsExist()) {
+                System.out.printf("[DITOLAK] %s sudah memiliki dosen pengajar\n", mataKuliah);
+            } else {
+                System.out.printf("%s mengajar mata kuliah %s\n", this, mataKuliah);
 
-            // Jadikan mataKuliah sebagai mata kuliah yang diajar oleh dosen tersebut
-            this.mataKuliah = mataKuliah;
+                // Jadikan mataKuliah sebagai mata kuliah yang diajar oleh dosen tersebut
+                this.mataKuliah = mataKuliah;
 
-            // Tambahkan dosen yang mengajar ke dalam MataKuliah
-            mataKuliah.addDosen(this);
-        } else if (mataKuliah.dosenIsExist()) {
-            System.out.printf("[DITOLAK] %s sudah memiliki dosen pengajar\n", mataKuliah);
+                // Tambahkan dosen yang mengajar ke dalam MataKuliah
+                mataKuliah.addDosen(this);
+            }
         }
     }
 
