@@ -11,6 +11,11 @@ public class Main {
 
     private static int totalElemenFasilkom = 0;
 
+    /**
+     * Getter elemen fasilkom berdasarkan nama dari elemen fasilkom
+     * @param nama elemen fasilkom yang akan dicari
+     * @return objek ElemenFasilkom yang dicari
+     */
     private static ElemenFasilkom getElemenFasilkom(String nama) {
         for (ElemenFasilkom elemenFasilkom : daftarElemenFasilkom) {
             if (elemenFasilkom != null && elemenFasilkom.toString().equals(nama)) {
@@ -22,6 +27,11 @@ public class Main {
         return null;
     }
 
+    /**
+     * Getter mata kuliah berdasarkan nama dari mata kuliah
+     * @param nama mata kuliahy yang akan dicari
+     * @return objek MataKuliah yang dicari
+     */
     private static MataKuliah getMataKuliah(String nama) {
         for (MataKuliah matkul : daftarMataKuliah) {
             if (matkul != null && matkul.toString().equals(nama)) {
@@ -33,24 +43,42 @@ public class Main {
         return null;
     }
 
+    /**
+     * Menambahkan instance mahasiswa baru
+     * @param nama nama dari mahasiswa
+     * @param npm npm dari mahasiswa
+     */
     private static void addMahasiswa(String nama, long npm) {
         Mahasiswa mahasiswa = new Mahasiswa(nama, npm);
         daftarElemenFasilkom[totalElemenFasilkom++] = mahasiswa;
         System.out.printf("%s berhasil ditambahkan\n", mahasiswa);
     }
 
+    /**
+     * Menambahkan instance dosen baru
+     * @param nama nama dari dosen
+     */
     private static void addDosen(String nama) {
         Dosen dosen = new Dosen(nama);
         daftarElemenFasilkom[totalElemenFasilkom++] = dosen;
         System.out.printf("%s berhasil ditambahkan\n", dosen);
     }
 
+    /**
+     * Menambahkan instance elemen kantin baru
+     * @param nama nama dari elemen kantin
+     */
     private static void addElemenKantin(String nama) {
         ElemenKantin elemenKantin = new ElemenKantin(nama);
         daftarElemenFasilkom[totalElemenFasilkom++] = elemenKantin;
         System.out.printf("%s berhasil ditambahkan\n", elemenKantin);
     }
 
+    /**
+     * Menyapa antara elemen fasilkom
+     * @param objek1 objek yang akan saling menyapa
+     * @param objek2 objek yang akan saling menyapa
+     */
     private static void menyapa(String objek1, String objek2) {
         if (objek1.equals(objek2)) {
             System.out.printf("[DITOLAK] Objek yang sama tidak bisa saling menyapa\n");
@@ -59,6 +87,12 @@ public class Main {
         }
     }
 
+    /**
+     * Menambahkan makanan yang dilakukan oleh elemen kantin
+     * @param objek objek ElemenKantin yang akan menambahkan makanan tersebut
+     * @param namaMakanan nama makanan yang akan ditambahkan
+     * @param harga harga dari makanan yang akan ditambahkan
+     */
     private static void addMakanan(String objek, String namaMakanan, long harga) {
         // Memeriksa apakah objek tersebut merupakan ElemenKantin atau bukan
         if (getElemenFasilkom(objek).getTipe().equals("ElemenKantin")) {
@@ -68,11 +102,17 @@ public class Main {
         }
     }
 
+    /**
+     * Membeli makanan yang dilakukan antara elemen kantin dengan elemen fasilkom
+     * @param objek1 elemen fasilkom yang merupakan pembeli
+     * @param objek2 elemen kantin yang merupakan penjual
+     * @param namaMakanan
+     */
     private static void membeliMakanan(String objek1, String objek2, String namaMakanan) {
         // objek1Pacil sebagai pembeli dan objek2Pacil sebagai penjual
         ElemenFasilkom objek1Pacil = getElemenFasilkom(objek1);
         ElemenFasilkom objek2Pacil = getElemenFasilkom(objek2);
-        if (objek2Pacil instanceof ElemenKantin) {
+        if (objek2Pacil.getTipe().equals("ElemenKantin")) {
             if (objek1Pacil.equals(objek2Pacil)) {
                 System.out.println("[DITOLAK] Elemen kantin tidak bisa membeli makanan sendiri");
             } else {
@@ -83,12 +123,22 @@ public class Main {
         }
     }
 
+    /**
+     * Membuat matkul baru
+     * @param nama nama dari mata kuliah baru yang akan dibuat
+     * @param kapasitas kapasitas dari mata kuliah yang akan dibuat
+     */
     private static void createMatkul(String nama, int kapasitas) {
         MataKuliah matkul = new MataKuliah(nama, kapasitas);
         daftarMataKuliah[totalMataKuliah++] = matkul;
         System.out.printf("%s berhasil ditambahkan dengan kapasitas %d\n", nama, kapasitas);
     }
 
+    /**
+     * Menambahkan matkul yang dilakukan oleh mahasiswa
+     * @param objek ElemenFasilkom yang berupa Mahasiswa
+     * @param namaMataKuliah nama mata kuliah yang akan ditambahkan
+     */
     private static void addMatkul(String objek, String namaMataKuliah) {
         if (getElemenFasilkom(objek).getTipe().equals("Mahasiswa")) {
             ((Mahasiswa) getElemenFasilkom(objek)).addMatkul(getMataKuliah(namaMataKuliah));
@@ -97,6 +147,11 @@ public class Main {
         }
     }
 
+    /**
+     * Melakukan drop matkul yang dilakukan oleh mahasiswa
+     * @param objek ElemenFasilkom yang berupa Mahasiswa
+     * @param namaMataKuliah nama mata kuliah yang akan ditambahkan
+     */
     private static void dropMatkul(String objek, String namaMataKuliah) {
         if (getElemenFasilkom(objek).getTipe().equals("Mahasiswa")) {
             ((Mahasiswa) getElemenFasilkom(objek)).dropMatkul(getMataKuliah(namaMataKuliah));
@@ -105,6 +160,11 @@ public class Main {
         }
     }
 
+    /**
+     * Menambahkan matkul yang diajarkan oleh dosen
+     * @param objek ElemenFasilkom berupa dosen
+     * @param namaMataKuliah nama mata kuliah yang akan diajarkan
+     */
     private static void mengajarMatkul(String objek, String namaMataKuliah) {
         if (getElemenFasilkom(objek).getTipe().equals("Dosen")) {
             ((Dosen) getElemenFasilkom(objek)).mengajarMataKuliah(getMataKuliah(namaMataKuliah));
@@ -113,6 +173,10 @@ public class Main {
         }
     }
 
+    /**
+     * Membuang/drop mata kuliah yang diajar oleh dosen
+     * @param objek ElemenFasilkom berupa dosen
+     */
     private static void berhentiMengajar(String objek) {
         if (getElemenFasilkom(objek) instanceof Dosen) {
             ((Dosen) getElemenFasilkom(objek)).dropMataKuliah();
@@ -121,6 +185,10 @@ public class Main {
         }
     }
 
+    /**
+     * Mencetak informasi umum dari mahasiswa
+     * @param objek Mahasiswa yang ingin dicetak informasinya
+     */
     private static void ringkasanMahasiswa(String objek) {
         ElemenFasilkom elemenFasilkom = getElemenFasilkom(objek);
         // Jika elemenFasilkom merupakan mahasiswa
@@ -153,10 +221,12 @@ public class Main {
         }
     }
 
+    /**
+     * Mencetak informasi umum dari mata kuliah
+     * @param namaMataKuliah nama mata kuliah yang ingin dicetak informasinya
+     */
     private static void ringkasanMataKuliah(String namaMataKuliah) {
-        String pesanJumlah;
         String pesanDosen;
-
         MataKuliah matkul = getMataKuliah(namaMataKuliah);
 
         // Pengecekan ada/tidaknya dosen pengajar
@@ -186,12 +256,15 @@ public class Main {
 
     }
 
+    /**
+     * Melakukan reset terhadap array telahMenyapa dan merangkum nilai friendship dari masing-masing elemenFasilkom
+     */
     private static void nextDay() {
         // Menghitung friendship points dari masing-masing elemen fasilkom
         for (ElemenFasilkom elemenFasilkom : daftarElemenFasilkom) {
-            if (elemenFasilkom != null && elemenFasilkom.getNumOfTelahMenyapa() >= (totalElemenFasilkom - 1) / 2) {
+            if (elemenFasilkom != null && elemenFasilkom.getNumOfTelahMenyapa() >= ((totalElemenFasilkom - 1) / 2)) {
                 elemenFasilkom.updateFriendship(10);
-            } else if (elemenFasilkom != null && elemenFasilkom.getNumOfTelahMenyapa() < (totalElemenFasilkom - 1) / 2) {
+            } else if (elemenFasilkom != null && elemenFasilkom.getNumOfTelahMenyapa() < ((totalElemenFasilkom - 1) / 2)) {
                 elemenFasilkom.updateFriendship(-5);
             }
         }
@@ -209,6 +282,9 @@ public class Main {
         }
     }
 
+    /**
+     * Melakukan perhitungan dan pengurutan nilai friendship dari masing-masing elemenFasilkom
+     */
     private static void friendshipRanking() {
         // Membuat variabel temp yang merupakan deep copy dari daftarElemenFasilkom
         ElemenFasilkom[] tempRank = daftarElemenFasilkom.clone();
@@ -236,12 +312,15 @@ public class Main {
         int counterPrint = 1;
         for (ElemenFasilkom arraySorted : tempRank) {
             if (arraySorted != null) {
-                System.out.println(String.format("%d. %s(%d)", counterPrint, arraySorted.getNama(), arraySorted.getFriendship()));
+                System.out.println(String.format("%d. %s(%d)", counterPrint, arraySorted, arraySorted.getFriendship()));
                 counterPrint++;
             }
         }
     }
 
+    /**
+     * Mengakhiri program
+     */
     private static void programEnd() {
         System.out.println("Program telah berakhir. Berikut nilai terakhir dari friendship pada Fasilkom :");
         friendshipRanking();
