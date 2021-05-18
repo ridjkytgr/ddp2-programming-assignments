@@ -73,7 +73,7 @@ abstract class ElemenFasilkom {
      * @param elemenFasilkom yang akan disapa
      */
     public void menyapa(ElemenFasilkom elemenFasilkom) {
-        if (this.validateMenyapa(elemenFasilkom)) {
+        if (validateMenyapa(elemenFasilkom)) {
             // Saling menambahkan satu sama lain pada array telahMenyapa
             this.telahMenyapa[numOfTelahMenyapa++] = elemenFasilkom;
             elemenFasilkom.telahMenyapa[elemenFasilkom.numOfTelahMenyapa++] = this;
