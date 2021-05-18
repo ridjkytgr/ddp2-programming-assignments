@@ -262,9 +262,9 @@ public class Main {
     private static void nextDay() {
         // Menghitung friendship points dari masing-masing elemen fasilkom
         for (ElemenFasilkom elemenFasilkom : daftarElemenFasilkom) {
-            if (elemenFasilkom != null && elemenFasilkom.getNumOfTelahMenyapa() >= ((totalElemenFasilkom - 1) / 2)) {
+            if (elemenFasilkom != null && elemenFasilkom.getNumOfTelahMenyapa() >= Math.round(((totalElemenFasilkom - 1) / 2.0))) {
                 elemenFasilkom.updateFriendship(10);
-            } else if (elemenFasilkom != null && elemenFasilkom.getNumOfTelahMenyapa() < ((totalElemenFasilkom - 1) / 2)) {
+            } else if (elemenFasilkom != null && elemenFasilkom.getNumOfTelahMenyapa() < Math.round(((totalElemenFasilkom - 1) / 2.0))) {
                 elemenFasilkom.updateFriendship(-5);
             }
         }
