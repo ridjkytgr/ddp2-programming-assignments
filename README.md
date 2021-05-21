@@ -10,6 +10,8 @@ Semester Genap 2020/2021
 1. Soal Tugas Pemrograman
    1. [Tugas Pemrograman 1][tp1]
    2. [Tugas Pemrograman 2][tp2]
+   3. [Tugas Pemrograman 3][tp3]
+   4. [Tugas Pemrograman 4][tp4]
 2. [Memulai](#memulai)
 3. [Mengerjakan Tugas Pemrograman](#mengerjakan-tugas-pemrograman)
 4. [Mendapatkan pembaruan dari *upstream*](#mendapatkan-pembaruan-dari-upstream)
@@ -170,6 +172,8 @@ yang telah dijelaskan dalam perkuliahan.
 
 [tp1]: assignment1/README.md
 [tp2]: assignment2/README.md
+[tp3]: assignment3/README.md
+[tp4]: assignment4/README.md
 [repositori-pusat]: https://gitlab.com/DDP2-CSUI/2020-2021-genap/assignments
 [panduan-commit]: https://chris.beams.io/posts/git-commit
 [panduan-konflik]: https://githowto.com/resolving_conflicts
