@@ -41,7 +41,7 @@ public class HomeGUI {
         frame.setVisible(true);
     }
 
-    public void addButton(JFrame frame, ArrayList<Mahasiswa> daftarMahasiswa, ArrayList<MataKuliah> daftarMataKuliah, JPanel panel, String text) {
+    private void addButton(JFrame frame, ArrayList<Mahasiswa> daftarMahasiswa, ArrayList<MataKuliah> daftarMataKuliah, JPanel panel, String text) {
         JButton newButton = new JButton(text);
         newButton.setFocusable(false);
         newButton.setFont(SistemAkademikGUI.fontGeneral);
