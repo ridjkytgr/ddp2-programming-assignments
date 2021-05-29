@@ -81,7 +81,7 @@ public class TambahMahasiswaGUI {
                     // Mengecek apakah ada npm yang sama
                     for (Mahasiswa mahasiswa : daftarMahasiswa) {
                         if (mahasiswa != null && mahasiswa.getNpm() == npm) {
-                            JOptionPane.showMessageDialog(frame, String.format("NPM %d sudah pernah ditambahkan sebelumnya"));
+                            JOptionPane.showMessageDialog(frame, String.format("NPM %d sudah pernah ditambahkan sebelumnya", npm));
 
                             // Mengosongkan field
                             namaField.setText("");
