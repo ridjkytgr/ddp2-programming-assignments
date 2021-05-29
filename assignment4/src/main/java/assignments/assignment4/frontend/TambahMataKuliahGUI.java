@@ -146,7 +146,7 @@ public class TambahMataKuliahGUI{
         frame.setVisible(true);
     }
 
-    public void addLabelGeneral(JPanel panel, String text) {
+    private void addLabelGeneral(JPanel panel, String text) {
         JLabel newLabel = new JLabel();
         newLabel.setText(text);
         newLabel.setFont(SistemAkademikGUI.fontGeneral);
