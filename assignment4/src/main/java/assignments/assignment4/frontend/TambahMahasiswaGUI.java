@@ -66,14 +66,46 @@ public class TambahMahasiswaGUI {
             public void actionPerformed(ActionEvent e) {
                 // Mengambil nama dan npm pada textField
                 String nama = namaField.getText();
-                long npm = Long.parseLong(npmField.getText());
+                String npmString = npmField.getText();
+                boolean flagNpmSama = false;
 
-                // Membuat instance mahasiswa dan memasukannya ke dalam ArrayList
-                Mahasiswa mahasiswa = new Mahasiswa(nama, npm);
-                daftarMahasiswa.add(mahasiswa);
+                // Mengecek keterisian field
+                if (nama.equals("") || npmString.equals("")) {
+                    JOptionPane.showMessageDialog(frame, "Mohon isi seluruh Field");
 
-                // Menampilkan message
-                JOptionPane.showMessageDialog(frame, String.format("Mahasiswa %d-%s berhasil ditambahkan", npm, nama));
+                    // Mengosongkan field
+                    namaField.setText("");
+                    npmField.setText("");
+                } else {
+                    long npm = Long.parseLong(npmString);
+                    // Mengecek apakah ada npm yang sama
+                    for (Mahasiswa mahasiswa : daftarMahasiswa) {
+                        if (mahasiswa != null && mahasiswa.getNpm() == npm) {
+                            JOptionPane.showMessageDialog(frame, String.format("NPM %d sudah pernah ditambahkan sebelumnya"));
+
+                            // Mengosongkan field
+                            namaField.setText("");
+                            npmField.setText("");
+                            flagNpmSama = true;
+                        } else if (mahasiswa == null) {
+                            break;
+                        }
+                    }
+
+                    // Jika tidak ada npm yang sama
+                    if (!flagNpmSama) {
+                        // Membuat instance mahasiswa dan memasukannya ke dalam ArrayList
+                        Mahasiswa mhs = new Mahasiswa(nama, npm);
+                        daftarMahasiswa.add(mhs);
+
+                        // Menampilkan message
+                        JOptionPane.showMessageDialog(frame, String.format("Mahasiswa %d-%s berhasil ditambahkan", npm, nama));
+
+                        // Mengosongkan field
+                        namaField.setText("");
+                        npmField.setText("");
+                    }
+                }
             }
         });
         tambahMahasiswaGUIPanel.add(tambahkanButton);
