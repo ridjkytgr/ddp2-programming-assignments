@@ -22,13 +22,10 @@ class SistemAkademikGUI extends JFrame{
     public static Font fontTitle = new Font("Century Gothic", Font.BOLD, 20);
 
     public SistemAkademikGUI(){
-
-        // Membuat Frame
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
-        // TODO: Tambahkan hal-hal lain yang diperlukan
-        
+        frame.setTitle("Administrator - Sistem Akademik");
         new HomeGUI(frame, daftarMahasiswa, daftarMataKuliah);
         frame.setVisible(true);
 
