@@ -91,8 +91,8 @@ Pipelines.
 - [ ] Demonstrasikan program kamu ke asdos kamu.
 
 ## Penilaian
-- **45%** `Kesesuaian Flow GUI dengan penjelasan soal`
-- **5%** `Implementasi Algoritma Sorting`
+- **40%** `Kesesuaian Flow GUI dengan penjelasan soal`
+- **10%** `Implementasi Algoritma Sorting`
 - **10%** `Estetika GUI`
 - **40%** `Demonstrasi Program ke Asisten`
 
