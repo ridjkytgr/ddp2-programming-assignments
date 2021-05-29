@@ -12,10 +12,13 @@ public class HomeGUI {
     
     public HomeGUI(JFrame frame, ArrayList<Mahasiswa> daftarMahasiswa, ArrayList<MataKuliah> daftarMataKuliah){
         JPanel homeGUIPanel = new JPanel();
+        // Menambahkan glue agar konten ada di tengah
         homeGUIPanel.add(Box.createVerticalGlue());
+
         homeGUIPanel.setLayout(new BoxLayout(homeGUIPanel, BoxLayout.Y_AXIS));
         homeGUIPanel.setBackground(new Color(0xCD7841));
 
+        // Menambahkan label untuk homeGUI
         JLabel titleLabel = new JLabel();
         titleLabel.setText("Selamat datang di Sistem Akademik");
         titleLabel.setFont(SistemAkademikGUI.fontTitle);
@@ -23,6 +26,7 @@ public class HomeGUI {
         homeGUIPanel.add(titleLabel);
         homeGUIPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
+        // Menambahkan button-button yang diperlukan
         addButton(frame, daftarMahasiswa, daftarMataKuliah, homeGUIPanel,"Tambah Mahasiswa");
         addButton(frame, daftarMahasiswa, daftarMataKuliah, homeGUIPanel,"Tambah Mata Kuliah");
         addButton(frame, daftarMahasiswa, daftarMataKuliah, homeGUIPanel,"Tambah IRS");
@@ -31,7 +35,10 @@ public class HomeGUI {
         addButton(frame, daftarMahasiswa, daftarMataKuliah, homeGUIPanel,"Lihat Ringkasan Mata Kuliah");
 
         frame.add(homeGUIPanel);
+        // Menambahkan glue agar konten tampil di tengah
         homeGUIPanel.add(Box.createVerticalGlue());
+
+        frame.setVisible(true);
     }
 
     public void addButton(JFrame frame, ArrayList<Mahasiswa> daftarMahasiswa, ArrayList<MataKuliah> daftarMataKuliah, JPanel panel, String text) {
