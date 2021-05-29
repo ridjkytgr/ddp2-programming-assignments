@@ -17,12 +17,6 @@ public class HapusIRSGUI {
         hapusIRSGUI.setLayout(new BoxLayout(hapusIRSGUI, BoxLayout.Y_AXIS));
         hapusIRSGUI.setBackground(new Color(0xCD7841));
 
-        // Menambahkan label title
-        JLabel sambutan = new JLabel();
-        sambutan.setText("Hapus IRS");
-        sambutan.setHorizontalAlignment(JLabel.CENTER);
-        sambutan.setFont(SistemAkademikGUI.fontTitle);
-
         // Membuat array yang menyimpan npm dari mahasiswa untuk ditampilkan pada dropdown
         Long[] arrayNpm = new Long[daftarMahasiswa.size()];
         String[] arrayNamaMatkul = new String[daftarMataKuliah.size()];
@@ -51,7 +45,7 @@ public class HapusIRSGUI {
 
         // Menambahkan label judul
         JLabel newLabel = new JLabel();
-        newLabel.setText("Tambah IRS");
+        newLabel.setText("Hapus IRS");
         newLabel.setFont(SistemAkademikGUI.fontTitle);
         newLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         hapusIRSGUI.add(newLabel);
@@ -71,7 +65,7 @@ public class HapusIRSGUI {
         hapusIRSGUI.add(dropdownNamaMatkul);
         hapusIRSGUI.add(Box.createRigidArea(new Dimension(0, 10)));
 
-        // Menambahkan button Tambahkan
+        // Menambahkan button Hapus
         JButton hapusButton = new JButton("Hapus");
         hapusButton.setFocusable(false);
         hapusButton.setFont(SistemAkademikGUI.fontGeneral);
@@ -166,8 +160,6 @@ public class HapusIRSGUI {
         newLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         panel.add(newLabel);
         panel.add(Box.createRigidArea(new Dimension(0, 10)));
-
-
     }
 
     private MataKuliah getMataKuliah(String nama, ArrayList<MataKuliah> daftarMataKuliah) {
