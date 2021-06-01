@@ -95,6 +95,7 @@ public class Mahasiswa {
             this.mataKuliah[i] = this.mataKuliah[i+1];
         }
         this.mataKuliah[9] = null;
+        this.mataKuliah[banyakMatkul-1] = null;
 
         this.banyakMatkul--;
         return("[BERHASIL] Silakan cek rekap untuk melihat hasil pengecekan IRS.");

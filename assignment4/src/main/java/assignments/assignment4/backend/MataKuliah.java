@@ -52,10 +52,12 @@ public class MataKuliah {
 
     public void dropMahasiswa(Mahasiswa mahasiswa) {
         int indeksMahasiswa = cekIndeks(mahasiswa);
-        this.jumlahMahasiswa -= 1;
-        for(int i=indeksMahasiswa; i<this.jumlahMahasiswa; i++){
+        for(int i=indeksMahasiswa; i<this.jumlahMahasiswa-1; i++){
             this.daftarMahasiswa[i] = this.daftarMahasiswa[i+1];
         }
+        this.daftarMahasiswa[jumlahMahasiswa-1] = null;
+        this.daftarMahasiswa[kapasitas-1] = null;
+        this.jumlahMahasiswa -= 1;
     }
 
     private int cekIndeks(Mahasiswa mahasiswa){
