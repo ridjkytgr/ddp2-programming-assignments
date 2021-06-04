@@ -15,7 +15,7 @@ public class TambahMataKuliahGUI{
         tambahMataKuliahGUIPanel.add(Box.createVerticalGlue());
 
         tambahMataKuliahGUIPanel.setLayout(new BoxLayout(tambahMataKuliahGUIPanel, BoxLayout.Y_AXIS));
-        tambahMataKuliahGUIPanel.setBackground(new Color(0x00DB88));
+        tambahMataKuliahGUIPanel.setBackground(new Color(0x03C1BF));
 
         // Menambahkan label judul
         JLabel newLabel = new JLabel();
@@ -49,6 +49,14 @@ public class TambahMataKuliahGUI{
         kapasitasField.setMaximumSize(new Dimension(250, 0));
         tambahMataKuliahGUIPanel.add(kapasitasField);
         tambahMataKuliahGUIPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+
+        // Menambahkan gif
+        ImageIcon subwayPict = new ImageIcon("assignment4/src/Subway.gif");
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(0, 2));
+        panel.add(new JLabel(subwayPict));
+        panel.add(tambahMataKuliahGUIPanel);
+        frame.add(panel);
 
         // Menambahkan button Tambahkan
         JButton tambahkanButton = new JButton("Tambahkan");
@@ -142,7 +150,6 @@ public class TambahMataKuliahGUI{
         // Menambahkan glue agar konten ada di tengah
         tambahMataKuliahGUIPanel.add(Box.createVerticalGlue());
 
-        frame.add(tambahMataKuliahGUIPanel);
         frame.setVisible(true);
     }
 

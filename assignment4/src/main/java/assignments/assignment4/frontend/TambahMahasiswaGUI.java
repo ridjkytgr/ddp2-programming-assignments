@@ -16,7 +16,7 @@ public class TambahMahasiswaGUI {
         tambahMahasiswaGUIPanel.add(Box.createVerticalGlue());
 
         tambahMahasiswaGUIPanel.setLayout(new BoxLayout(tambahMahasiswaGUIPanel, BoxLayout.Y_AXIS));
-        tambahMahasiswaGUIPanel.setBackground(new Color(0x00DB88));
+        tambahMahasiswaGUIPanel.setBackground(new Color(0x03C1BF));
 
         // Menambahkan label Tambah Mahasiswa
         JLabel titleLabel = new JLabel();
@@ -53,6 +53,14 @@ public class TambahMahasiswaGUI {
         npmField.setMaximumSize(new Dimension(250, 0));
         tambahMahasiswaGUIPanel.add(npmField);
         tambahMahasiswaGUIPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+
+        // Menambahkan gif
+        ImageIcon subwayPict = new ImageIcon("assignment4/src/Subway.gif");
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(0, 2));
+        panel.add(new JLabel(subwayPict));
+        panel.add(tambahMahasiswaGUIPanel);
+        frame.add(panel);
 
         // Menambahkan button Tambahkan
         JButton tambahkanButton = new JButton("Tambahkan");
@@ -134,7 +142,6 @@ public class TambahMahasiswaGUI {
         // Menambahkan glue agar konten ada di tengah
         tambahMahasiswaGUIPanel.add(Box.createVerticalGlue());
 
-        frame.add(tambahMahasiswaGUIPanel);
         frame.setVisible(true);
     }
 

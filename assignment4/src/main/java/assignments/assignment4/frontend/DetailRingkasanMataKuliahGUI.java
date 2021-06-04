@@ -14,7 +14,7 @@ public class DetailRingkasanMataKuliahGUI {
         detailRingkasanMatkulGUI.add(Box.createVerticalGlue());
 
         detailRingkasanMatkulGUI.setLayout(new BoxLayout(detailRingkasanMatkulGUI, BoxLayout.Y_AXIS));
-        detailRingkasanMatkulGUI.setBackground(new Color(0x00DB88));
+        detailRingkasanMatkulGUI.setBackground(new Color(0x03C1BF));
 
         // Menambahkan label judul
         JLabel newLabel = new JLabel();
@@ -44,7 +44,7 @@ public class DetailRingkasanMataKuliahGUI {
         if (jumlahMahasiswa == 0) {
             JLabel daftarMahasiswaLabel = new JLabel();
             daftarMahasiswaLabel.setText("Belum ada mahasiswa yang mengambil mata kuliah ini.");
-            daftarMahasiswaLabel.setFont(new Font("Century Gothic", Font.BOLD, 12));
+            daftarMahasiswaLabel.setFont(new Font("Courier New", Font.BOLD, 12));
             daftarMahasiswaLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
             detailRingkasanMatkulGUI.add(daftarMahasiswaLabel);
             detailRingkasanMatkulGUI.add(Box.createRigidArea(new Dimension(0, 10)));

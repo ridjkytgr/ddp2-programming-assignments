@@ -15,7 +15,7 @@ public class HapusIRSGUI {
         hapusIRSGUI.add(Box.createVerticalGlue());
 
         hapusIRSGUI.setLayout(new BoxLayout(hapusIRSGUI, BoxLayout.Y_AXIS));
-        hapusIRSGUI.setBackground(new Color(0x00DB88));
+        hapusIRSGUI.setBackground(new Color(0x03C1BF));
 
         // Membuat array yang menyimpan npm dari mahasiswa untuk ditampilkan pada dropdown
         Long[] arrayNpm = new Long[daftarMahasiswa.size()];
@@ -42,6 +42,15 @@ public class HapusIRSGUI {
         // Melakukan sorting terhadap array npm dan nama mata kuliah
         Long[] arrayNpmSorted = sortNpm(arrayNpm);
         String[] arrayNamaMatkulSorted = sortNamaMatkul(arrayNamaMatkul);
+
+        // Menambahkan gif
+        ImageIcon pemandanganPict = new ImageIcon("assignment4/src/Pemandangan.gif");
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(0, 2));
+        panel.add(new JLabel(pemandanganPict));
+        panel.add(hapusIRSGUI);
+        frame.add(panel);
+
 
         // Menambahkan label judul
         JLabel newLabel = new JLabel();
@@ -119,10 +128,9 @@ public class HapusIRSGUI {
         });
         hapusIRSGUI.add(kembaliButton);
 
+
         // Menambahkan glue agar konten ada di tengah
         hapusIRSGUI.add(Box.createVerticalGlue());
-
-        frame.add(hapusIRSGUI);
         frame.setVisible(true);
 
     }

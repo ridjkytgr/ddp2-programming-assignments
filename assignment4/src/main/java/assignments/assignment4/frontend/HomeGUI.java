@@ -16,7 +16,7 @@ public class HomeGUI {
         homeGUIPanel.add(Box.createVerticalGlue());
 
         homeGUIPanel.setLayout(new BoxLayout(homeGUIPanel, BoxLayout.Y_AXIS));
-        homeGUIPanel.setBackground(new Color(0x00DB88));
+        homeGUIPanel.setBackground(new Color(0x03C1BF));
 
         // Menambahkan label untuk homeGUI
         JLabel titleLabel = new JLabel();
@@ -26,6 +26,9 @@ public class HomeGUI {
         homeGUIPanel.add(titleLabel);
         homeGUIPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 
+        // Meng-import gif
+        ImageIcon ngopiPict = new ImageIcon("assignment4/src/Ngopi.gif");
+
         // Menambahkan button-button yang diperlukan
         addButton(frame, daftarMahasiswa, daftarMataKuliah, homeGUIPanel,"Tambah Mahasiswa");
         addButton(frame, daftarMahasiswa, daftarMataKuliah, homeGUIPanel,"Tambah Mata Kuliah");
@@ -34,7 +37,13 @@ public class HomeGUI {
         addButton(frame, daftarMahasiswa, daftarMataKuliah, homeGUIPanel,"Lihat Ringkasan Mahasiswa");
         addButton(frame, daftarMahasiswa, daftarMataKuliah, homeGUIPanel,"Lihat Ringkasan Mata Kuliah");
 
-        frame.add(homeGUIPanel);
+        // Menempelkan gif
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(0, 2));
+        panel.add(homeGUIPanel);
+        panel.add(new JLabel(ngopiPict));
+        frame.add(panel);
+
         // Menambahkan glue agar konten tampil di tengah
         homeGUIPanel.add(Box.createVerticalGlue());
 

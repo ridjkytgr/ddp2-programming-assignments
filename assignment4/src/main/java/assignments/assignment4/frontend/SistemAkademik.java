@@ -18,13 +18,13 @@ public class SistemAkademik {
 class SistemAkademikGUI extends JFrame{
     private static ArrayList<Mahasiswa> daftarMahasiswa = new ArrayList<Mahasiswa>();
     private static ArrayList<MataKuliah> daftarMataKuliah = new ArrayList<MataKuliah>();
-    public static Font fontGeneral = new Font("Century Gothic", Font.PLAIN , 14);
-    public static Font fontTitle = new Font("Century Gothic", Font.BOLD, 20);
+    public static Font fontGeneral = new Font("Courier New", Font.PLAIN , 14);
+    public static Font fontTitle = new Font("Courier New", Font.BOLD, 20);
 
     public SistemAkademikGUI(){
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 500);
+        frame.setSize(900, 500);
         frame.setTitle("Administrator - Sistem Akademik");
         new HomeGUI(frame, daftarMahasiswa, daftarMataKuliah);
         frame.setVisible(true);

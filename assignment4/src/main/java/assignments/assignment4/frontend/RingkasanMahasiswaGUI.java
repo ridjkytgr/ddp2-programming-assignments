@@ -15,7 +15,7 @@ public class RingkasanMahasiswaGUI {
         ringkasanMahasiswaGUI.add(Box.createVerticalGlue());
 
         ringkasanMahasiswaGUI.setLayout(new BoxLayout(ringkasanMahasiswaGUI, BoxLayout.Y_AXIS));
-        ringkasanMahasiswaGUI.setBackground(new Color(0x00DB88));
+        ringkasanMahasiswaGUI.setBackground(new Color(0x03C1BF));
 
         // Membuat array yang menyimpan npm dari mahasiswa untuk ditampilkan pada dropdown
         Long[] arrayNpm = new Long[daftarMahasiswa.size()];
@@ -31,6 +31,15 @@ public class RingkasanMahasiswaGUI {
 
         // Melakukan sort terhadap arrayNpm
         Long[] arrayNpmSorted = sortNpm(arrayNpm);
+
+        // Menambahkan gif
+        ImageIcon pemandanganPict = new ImageIcon("assignment4/src/Sungai.gif");
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(0, 2));
+        panel.add(new JLabel(pemandanganPict));
+        panel.add(ringkasanMahasiswaGUI);
+        frame.add(panel);
+
 
         // Menambahkan label judul
         JLabel newLabel = new JLabel();
@@ -110,7 +119,6 @@ public class RingkasanMahasiswaGUI {
         // Menambahkan glue agar konten ada di tengah
         ringkasanMahasiswaGUI.add(Box.createVerticalGlue());
 
-        frame.add(ringkasanMahasiswaGUI);
         frame.setVisible(true);
     }
 

@@ -15,7 +15,7 @@ public class RingkasanMataKuliahGUI {
         ringkasanMataKuliahGUI.add(Box.createVerticalGlue());
 
         ringkasanMataKuliahGUI.setLayout(new BoxLayout(ringkasanMataKuliahGUI, BoxLayout.Y_AXIS));
-        ringkasanMataKuliahGUI.setBackground(new Color(0x00DB88));
+        ringkasanMataKuliahGUI.setBackground(new Color(0x03C1BF));
 
         // Membuat array yang menyimpan nama mata kuliah untuk ditampilkan pada dropdown
         String[] arrayNamaMatkul = new String[daftarMataKuliah.size()];
@@ -31,6 +31,14 @@ public class RingkasanMataKuliahGUI {
 
         // Melakukan sort terhadap arrayNpm
         String[] arrayNamaMatkulSorted = sortNamaMatkul(arrayNamaMatkul);
+
+        // Menambahkan gif
+        ImageIcon pemandanganPict = new ImageIcon("assignment4/src/Sungai.gif");
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(0, 2));
+        panel.add(new JLabel(pemandanganPict));
+        panel.add(ringkasanMataKuliahGUI);
+        frame.add(panel);
 
         // Menambahkan label judul
         JLabel newLabel = new JLabel();
@@ -110,7 +118,6 @@ public class RingkasanMataKuliahGUI {
         // Menambahkan glue agar konten ada di tengah
         ringkasanMataKuliahGUI.add(Box.createVerticalGlue());
 
-        frame.add(ringkasanMataKuliahGUI);
         frame.setVisible(true);
     }
 

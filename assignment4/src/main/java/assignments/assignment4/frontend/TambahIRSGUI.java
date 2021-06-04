@@ -15,7 +15,7 @@ public class TambahIRSGUI {
         tambahIRSGUI.add(Box.createVerticalGlue());
 
         tambahIRSGUI.setLayout(new BoxLayout(tambahIRSGUI, BoxLayout.Y_AXIS));
-        tambahIRSGUI.setBackground(new Color(0x00DB88));
+        tambahIRSGUI.setBackground(new Color(0x03C1BF));
 
         // Membuat array yang menyimpan npm dari mahasiswa untuk ditampilkan pada dropdown
         Long[] arrayNpm = new Long[daftarMahasiswa.size()];
@@ -119,10 +119,17 @@ public class TambahIRSGUI {
         });
         tambahIRSGUI.add(kembaliButton);
 
+        // Menambahkan gif
+        ImageIcon pemandanganPict = new ImageIcon("assignment4/src/Pemandangan.gif");
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(0, 2));
+        panel.add(new JLabel(pemandanganPict));
+        panel.add(tambahIRSGUI);
+        frame.add(panel);
+
         // Menambahkan glue agar konten ada di tengah
         tambahIRSGUI.add(Box.createVerticalGlue());
 
-        frame.add(tambahIRSGUI);
         frame.setVisible(true);
     }
 

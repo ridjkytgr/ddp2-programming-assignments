@@ -14,7 +14,7 @@ public class DetailRingkasanMahasiswaGUI {
         detailRingkasanMhsGUI.add(Box.createVerticalGlue());
 
         detailRingkasanMhsGUI.setLayout(new BoxLayout(detailRingkasanMhsGUI, BoxLayout.Y_AXIS));
-        detailRingkasanMhsGUI.setBackground(new Color(0x00DB88));
+        detailRingkasanMhsGUI.setBackground(new Color(0x03C1BF));
 
         // Menambahkan label judul
         JLabel newLabel = new JLabel();
@@ -61,7 +61,7 @@ public class DetailRingkasanMahasiswaGUI {
         if (banyakMasalahIRS == 0) {
             JLabel masalahIRSLabel = new JLabel();
             masalahIRSLabel.setText("IRS tidak bermasalah.");
-            masalahIRSLabel.setFont(new Font("Century Gothic", Font.BOLD, 12));
+            masalahIRSLabel.setFont(new Font("Courier New", Font.BOLD, 12));
             masalahIRSLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
             detailRingkasanMhsGUI.add(masalahIRSLabel);
             detailRingkasanMhsGUI.add(Box.createRigidArea(new Dimension(0, 10)));
@@ -69,7 +69,7 @@ public class DetailRingkasanMahasiswaGUI {
             for (int i = 0; i < banyakMasalahIRS; i++) {
                 JLabel masalahIRSLabel = new JLabel();
                 masalahIRSLabel.setText(Integer.toString(i + 1) + ". " + masalahIRS[i]);
-                masalahIRSLabel.setFont(new Font("Century Gothic", Font.BOLD, 12));
+                masalahIRSLabel.setFont(new Font("Courier New", Font.BOLD, 12));
                 masalahIRSLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
                 detailRingkasanMhsGUI.add(masalahIRSLabel);
                 detailRingkasanMhsGUI.add(Box.createRigidArea(new Dimension(0, 10)));
