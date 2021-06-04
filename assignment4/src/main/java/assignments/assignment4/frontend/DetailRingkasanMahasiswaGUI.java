@@ -14,7 +14,7 @@ public class DetailRingkasanMahasiswaGUI {
         detailRingkasanMhsGUI.add(Box.createVerticalGlue());
 
         detailRingkasanMhsGUI.setLayout(new BoxLayout(detailRingkasanMhsGUI, BoxLayout.Y_AXIS));
-        detailRingkasanMhsGUI.setBackground(new Color(0xCD7841));
+        detailRingkasanMhsGUI.setBackground(new Color(0x00DB88));
 
         // Menambahkan label judul
         JLabel newLabel = new JLabel();

@@ -15,7 +15,7 @@ public class RingkasanMataKuliahGUI {
         ringkasanMataKuliahGUI.add(Box.createVerticalGlue());
 
         ringkasanMataKuliahGUI.setLayout(new BoxLayout(ringkasanMataKuliahGUI, BoxLayout.Y_AXIS));
-        ringkasanMataKuliahGUI.setBackground(new Color(0xCD7841));
+        ringkasanMataKuliahGUI.setBackground(new Color(0x00DB88));
 
         // Membuat array yang menyimpan nama mata kuliah untuk ditampilkan pada dropdown
         String[] arrayNamaMatkul = new String[daftarMataKuliah.size()];
@@ -51,6 +51,7 @@ public class RingkasanMataKuliahGUI {
         // Menambahkan dropdownMataKuliah
         JComboBox dropdownMataKuliah = new JComboBox(arrayNamaMatkulSorted);
         dropdownMataKuliah.setMaximumSize(new Dimension(175, 0));
+        dropdownMataKuliah.setMaximumRowCount(8);
         ringkasanMataKuliahGUI.add(dropdownMataKuliah);
         ringkasanMataKuliahGUI.add(Box.createRigidArea(new Dimension(0, 10)));
 

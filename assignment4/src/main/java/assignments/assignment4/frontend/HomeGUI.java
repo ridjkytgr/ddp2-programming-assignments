@@ -16,7 +16,7 @@ public class HomeGUI {
         homeGUIPanel.add(Box.createVerticalGlue());
 
         homeGUIPanel.setLayout(new BoxLayout(homeGUIPanel, BoxLayout.Y_AXIS));
-        homeGUIPanel.setBackground(new Color(0xCD7841));
+        homeGUIPanel.setBackground(new Color(0x00DB88));
 
         // Menambahkan label untuk homeGUI
         JLabel titleLabel = new JLabel();

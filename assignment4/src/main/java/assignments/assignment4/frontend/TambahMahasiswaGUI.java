@@ -16,7 +16,7 @@ public class TambahMahasiswaGUI {
         tambahMahasiswaGUIPanel.add(Box.createVerticalGlue());
 
         tambahMahasiswaGUIPanel.setLayout(new BoxLayout(tambahMahasiswaGUIPanel, BoxLayout.Y_AXIS));
-        tambahMahasiswaGUIPanel.setBackground(new Color(0xCD7841));
+        tambahMahasiswaGUIPanel.setBackground(new Color(0x00DB88));
 
         // Menambahkan label Tambah Mahasiswa
         JLabel titleLabel = new JLabel();

@@ -15,7 +15,7 @@ public class HapusIRSGUI {
         hapusIRSGUI.add(Box.createVerticalGlue());
 
         hapusIRSGUI.setLayout(new BoxLayout(hapusIRSGUI, BoxLayout.Y_AXIS));
-        hapusIRSGUI.setBackground(new Color(0xCD7841));
+        hapusIRSGUI.setBackground(new Color(0x00DB88));
 
         // Membuat array yang menyimpan npm dari mahasiswa untuk ditampilkan pada dropdown
         Long[] arrayNpm = new Long[daftarMahasiswa.size()];
@@ -55,6 +55,7 @@ public class HapusIRSGUI {
         addLabelGeneral(hapusIRSGUI, "Pilih NPM");
         JComboBox<Long> dropdownNpm = new JComboBox<>(arrayNpmSorted);
         dropdownNpm.setMaximumSize(new Dimension(175, 0));
+        dropdownNpm.setMaximumRowCount(8);
         hapusIRSGUI.add(dropdownNpm);
         hapusIRSGUI.add(Box.createRigidArea(new Dimension(0, 10)));
 
@@ -62,6 +63,7 @@ public class HapusIRSGUI {
         addLabelGeneral(hapusIRSGUI, "Pilih Nama Matkul");
         JComboBox dropdownNamaMatkul = new JComboBox(arrayNamaMatkulSorted);
         dropdownNamaMatkul.setMaximumSize(new Dimension(175, 0));
+        dropdownNamaMatkul.setMaximumRowCount(8);
         hapusIRSGUI.add(dropdownNamaMatkul);
         hapusIRSGUI.add(Box.createRigidArea(new Dimension(0, 10)));
 

@@ -15,7 +15,7 @@ public class TambahMataKuliahGUI{
         tambahMataKuliahGUIPanel.add(Box.createVerticalGlue());
 
         tambahMataKuliahGUIPanel.setLayout(new BoxLayout(tambahMataKuliahGUIPanel, BoxLayout.Y_AXIS));
-        tambahMataKuliahGUIPanel.setBackground(new Color(0xCD7841));
+        tambahMataKuliahGUIPanel.setBackground(new Color(0x00DB88));
 
         // Menambahkan label judul
         JLabel newLabel = new JLabel();

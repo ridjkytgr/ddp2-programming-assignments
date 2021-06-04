@@ -15,7 +15,7 @@ public class TambahIRSGUI {
         tambahIRSGUI.add(Box.createVerticalGlue());
 
         tambahIRSGUI.setLayout(new BoxLayout(tambahIRSGUI, BoxLayout.Y_AXIS));
-        tambahIRSGUI.setBackground(new Color(0xCD7841));
+        tambahIRSGUI.setBackground(new Color(0x00DB88));
 
         // Membuat array yang menyimpan npm dari mahasiswa untuk ditampilkan pada dropdown
         Long[] arrayNpm = new Long[daftarMahasiswa.size()];
@@ -55,6 +55,7 @@ public class TambahIRSGUI {
         addLabelGeneral(tambahIRSGUI, "Pilih NPM");
         JComboBox<Long> dropdownNpm = new JComboBox<>(arrayNpmSorted);
         dropdownNpm.setMaximumSize(new Dimension(175, 0));
+        dropdownNpm.setMaximumRowCount(8);
         tambahIRSGUI.add(dropdownNpm);
         tambahIRSGUI.add(Box.createRigidArea(new Dimension(0, 10)));
 
@@ -62,6 +63,7 @@ public class TambahIRSGUI {
         addLabelGeneral(tambahIRSGUI, "Pilih Nama Matkul");
         JComboBox dropdownNamaMatkul = new JComboBox(arrayNamaMatkulSorted);
         dropdownNamaMatkul.setMaximumSize(new Dimension(175, 0));
+        dropdownNamaMatkul.setMaximumRowCount(8);
         tambahIRSGUI.add(dropdownNamaMatkul);
         tambahIRSGUI.add(Box.createRigidArea(new Dimension(0, 10)));
 
@@ -150,7 +152,7 @@ public class TambahIRSGUI {
     private String[] sortNamaMatkul(String[] namaMatkul) {
         for (int i = 0; i < namaMatkul.length; i++) {
             for (int j = i + 1; j < namaMatkul.length; j++) {
-                if (namaMatkul[i].compareToIgnoreCase(namaMatkul[j]) > 0) {
+                if (namaMatkul[i].compareTo(namaMatkul[j]) > 0) {
                     // Melakukan swap
                     String tempMin = namaMatkul[j];
                     namaMatkul[j] = namaMatkul[i];

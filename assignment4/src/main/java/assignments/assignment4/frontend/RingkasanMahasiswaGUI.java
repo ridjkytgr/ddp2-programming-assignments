@@ -15,7 +15,7 @@ public class RingkasanMahasiswaGUI {
         ringkasanMahasiswaGUI.add(Box.createVerticalGlue());
 
         ringkasanMahasiswaGUI.setLayout(new BoxLayout(ringkasanMahasiswaGUI, BoxLayout.Y_AXIS));
-        ringkasanMahasiswaGUI.setBackground(new Color(0xCD7841));
+        ringkasanMahasiswaGUI.setBackground(new Color(0x00DB88));
 
         // Membuat array yang menyimpan npm dari mahasiswa untuk ditampilkan pada dropdown
         Long[] arrayNpm = new Long[daftarMahasiswa.size()];
@@ -51,6 +51,7 @@ public class RingkasanMahasiswaGUI {
         // Menambahkan dropdownNpm
         JComboBox<Long> dropdownNpm = new JComboBox<>(arrayNpmSorted);
         dropdownNpm.setMaximumSize(new Dimension(175, 0));
+        dropdownNpm.setMaximumRowCount(8);
         ringkasanMahasiswaGUI.add(dropdownNpm);
         ringkasanMahasiswaGUI.add(Box.createRigidArea(new Dimension(0, 10)));
 
