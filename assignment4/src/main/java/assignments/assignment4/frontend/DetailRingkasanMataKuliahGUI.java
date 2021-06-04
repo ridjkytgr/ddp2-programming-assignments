@@ -79,6 +79,10 @@ public class DetailRingkasanMataKuliahGUI {
         });
         detailRingkasanMatkulGUI.add(kembaliButton);
 
+        // Menambahkan scroller
+        JScrollPane scrollPane = new JScrollPane(detailRingkasanMatkulGUI);
+        frame.add(scrollPane);
+
         // Menambahkan glue agar konten ada di tengah
         detailRingkasanMatkulGUI.add(Box.createVerticalGlue());
 

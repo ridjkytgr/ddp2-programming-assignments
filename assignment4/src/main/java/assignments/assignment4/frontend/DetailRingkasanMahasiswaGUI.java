@@ -27,7 +27,7 @@ public class DetailRingkasanMahasiswaGUI {
         // Menampung variabel label-label yang perlu ditampung
         String nama = mahasiswa.getNama();
         long npm = mahasiswa.getNpm();
-        String jurusan = mahasiswa.extractJurusan(mahasiswa.getNpm());
+        String jurusan = mahasiswa.getJurusan();
 
         MataKuliah[] matkul = mahasiswa.getMataKuliah();
         int banyakMatkul = mahasiswa.getBanyakMatkul();
@@ -47,11 +47,11 @@ public class DetailRingkasanMahasiswaGUI {
 
         // Mencetak matkul-matkul yang diambil oleh mahasiswa
         for (int i = 0; i < banyakMatkul; i++) {
-            JLabel masalahIRSLabel = new JLabel();
-            masalahIRSLabel.setText(Integer.toString(i+1) + ". " + matkul[i]);
-            masalahIRSLabel.setFont(new Font("Century Gothic", Font.BOLD, 12));
-            masalahIRSLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-            detailRingkasanMhsGUI.add(masalahIRSLabel);
+            JLabel matkulLabel = new JLabel();
+            matkulLabel.setText(Integer.toString(i+1) + ". " + matkul[i]);
+            matkulLabel.setFont(new Font("Century Gothic", Font.BOLD, 12));
+            matkulLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+            detailRingkasanMhsGUI.add(matkulLabel);
             detailRingkasanMhsGUI.add(Box.createRigidArea(new Dimension(0, 10)));
         }
         addLabelGeneral(detailRingkasanMhsGUI, "Total SKS: " + sks);
@@ -95,6 +95,10 @@ public class DetailRingkasanMahasiswaGUI {
             }
         });
         detailRingkasanMhsGUI.add(kembaliButton);
+
+        // Menambahkan scroller
+        JScrollPane scrollPane = new JScrollPane(detailRingkasanMhsGUI);
+        frame.add(scrollPane);
 
         // Menambahkan glue agar konten ada di tengah
         detailRingkasanMhsGUI.add(Box.createVerticalGlue());
